@@ -29,3 +29,8 @@ code {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+.cars {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

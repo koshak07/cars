@@ -29,7 +29,7 @@ const AuserContextProvider = (props) => {
           console.log(e);
       }
   }
-  //стгиваем продукт
+  //стягиваем продукт
 const getCars = async ()=>{
     try {
         const response = await axios(API)
@@ -38,7 +38,7 @@ const getCars = async ()=>{
             payload: response.data
         }
         dispatch(action)
-        console.log(action);
+        // console.log(action);
     } catch (e) {
         console.log(e);
     }
@@ -48,6 +48,8 @@ const getCars = async ()=>{
   <auserContext.Provider
   value={{
       addCar:addCar,
+      getCars,
+      cars: state.cars
   }}
   >
       {props.children}
