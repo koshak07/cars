@@ -1,6 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import React, { useContext } from "react";
+import { useNavigate } from "react-router";
 import * as yup from "yup";
 import { auserContext } from "../contexts/AuserContext";
 
@@ -16,8 +17,10 @@ const AddPage = () => {
   });
   //стягиваем addcar с аюзерконтекста
   const { addCar } = useContext(auserContext);
+  const navigate = useNavigate()
   const handleSubmit = (car) => {
     addCar(car);
+    navigate('/')
   };
 
   return (
