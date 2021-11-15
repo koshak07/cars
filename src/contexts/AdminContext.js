@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useReducer } from "react";
 import { API } from "../helpers/API";
 
-export const auserContext = React.createContext();
+export const adminContext = React.createContext();
 
 const INIT_STATE = {
   cars: null,
@@ -24,7 +24,7 @@ const reducer = (state = INIT_STATE, action) => {
 
 
 
-const AuserContextProvider = (props) => {
+const AdminContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 //greate product
   const addCar = async (car) =>{
@@ -83,22 +83,35 @@ const clearState = ()=>{
 }
 
 
+//delete
+
+const deleteCar = async (id)=>{
+  try {
+    const response = await axios.delete(`${API}/${id}`)
+    getCars()
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+
 
 
   return (
-  <auserContext.Provider
+  <adminContext.Provider
   value={{
       addCar:addCar,
       getCars,
       clearState,
       saveEditedCar,
       getCarToEdit,
+      deleteCar,
       cars: state.cars,
       carToEdit: state.carToEdit,
   }}
   >
       {props.children}
- </auserContext.Provider>)
+ </adminContext.Provider>)
 };
 
-export default AuserContextProvider;
+export default AdminContextProvider;

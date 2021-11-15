@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import * as yup from "yup";
-import { auserContext } from "../contexts/AuserContext";
+import { adminContext } from "../contexts/AdminContext";
 
 const EditPage = () => {
   const schema = yup.object({
@@ -16,7 +16,7 @@ const EditPage = () => {
     description: yup.string().min(1).max(200).required("Обязательно"),
   });
   const params = useParams();
-  const { getCarToEdit, carToEdit, saveEditedCar } = useContext(auserContext);
+  const { getCarToEdit, carToEdit, saveEditedCar } = useContext(adminContext);
   useEffect(() => {
     getCarToEdit(params.id);
   }, []);
@@ -30,7 +30,7 @@ const EditPage = () => {
           initialValues={carToEdit}
           onSubmit={(editedCar) => {
             saveEditedCar(editedCar);
-            navigate("/");
+            navigate("/admin");
           }}
         >
           {({ handleSubmit, handleChange, values, touched, errors }) => (

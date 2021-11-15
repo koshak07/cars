@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 import * as yup from "yup";
-import { auserContext } from "../contexts/AuserContext";
+import { adminContext } from "../contexts/AdminContext";
 
 const AddPage = () => {
   const schema = yup.object({
@@ -16,11 +16,11 @@ const AddPage = () => {
     description: yup.string().min(1).max(200).required("Обязательно"),
   });
   //стягиваем addcar с аюзерконтекста
-  const { addCar } = useContext(auserContext);
+  const { addCar } = useContext(adminContext);
   const navigate = useNavigate()
   const handleSubmit = (car) => {
     addCar(car);
-    navigate('/')
+    navigate('/admin')
   };
 
   return (

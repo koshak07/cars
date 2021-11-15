@@ -4,11 +4,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
-import { auserContext } from "../contexts/AuserContext";
 import { Link } from "react-router-dom";
+import { adminContext } from "../contexts/AdminContext";
 
 export const MediaCard = () => {
-  const { getCars, cars } = useContext(auserContext);
+  const { getCars, cars, deleteCar } = useContext(adminContext);
 
   useEffect(() => {
     getCars();
@@ -49,12 +49,15 @@ export const MediaCard = () => {
               </CardContent>
             </CardActionArea>
             <CardActions>
-              <Link to={`auser/edit/${item.id}`}>
+              <Link to={`/admin/edit/${item.id}`}>
 
               <Button size="small" color="primary">
                 Edit Car
               </Button>
               </Link>
+              <Button onClick={()=> deleteCar(item.id)} size="small" color="error">
+                Delete
+              </Button>
             </CardActions>
           </Card>
         ))

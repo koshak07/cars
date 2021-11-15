@@ -15,6 +15,8 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { useNavigate } from 'react-router';
+import { userContext } from '../contexts/UserContext';
  
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -57,6 +59,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
  
 export default function NavBar() {
+    const navigate = useNavigate();
+    const {getCars} = React.useContext(userContext)
+    console.log(getCars);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
  
@@ -173,8 +178,12 @@ export default function NavBar() {
                         noWrap
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block' } }}
+                        onClick={()=>{
+                            navigate("/");
+                            getCars()
+                        }}
                     >
-                        MUI
+                        Cars
                     </Typography> 
                     <Search>
                         <SearchIconWrapper>
