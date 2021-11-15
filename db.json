@@ -11,14 +11,24 @@
       "id": 1
     },
     {
-      "image": "dasd",
-      "brand": "sdada",
-      "model": "wewqe",
-      "color": "dsdfas",
-      "yearOfIssue": "1515",
-      "price": "151515",
-      "description": "11212",
+      "image": "https://s.auto.drom.ru/photo/uZLE8KGBc7yEEiyYpffcwPCiUAsvzRQX7YEqKXBBIErdeKM6LgL1L5p5D0AFqeKRJtycAh310DlLPjmSw_FEI0Gr1z_0.jpg",
+      "brand": "mersedes",
+      "model": "s-class",
+      "color": "black",
+      "yearOfIssue": "2012",
+      "price": "25000",
+      "description": "Машина в отличном состоянии, как внешне так и по технической части, любые проверки, обслуживается только у официального дилера. Пробег реальный - любые проверки Автомобиль не требует вложений Зимой в Москве не эксплуатировалась, поэтому днище в идеальном состоянии, ржавчины и прочего нет.",
       "id": 2
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/BkiHfbmF6gQgW9QGpHNb4M-dbgvWC-ZbJ17R1nkVKVAhMIGJVGUubO9ukVV0dOh7m_AK-Larg1-EI_LEmrJvpti8Q5ZX.jpg",
+      "brand": "toyota",
+      "model": "Sequoia",
+      "color": "black",
+      "yearOfIssue": "2005",
+      "price": "12000",
+      "description": "Limited edition! 5.7 газ-бензин! Полный привод. С 2019 года в одних руках! Два монитора,камера заднего вида,подогрев сидений,климат контроль и т.д. Состояние исключительного авто ! Машина прошла полное Т/О. Сделан Аквапринт.",
+      "id": 3
     }
   ]
 }

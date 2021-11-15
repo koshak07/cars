@@ -13,7 +13,7 @@ const EditPage = () => {
     color: yup.string().min(1).max(200).required("Обязательно"),
     yearOfIssue: yup.number().min(1).required("Обязательно"),
     price: yup.number().min(1).required("Обязательно"),
-    description: yup.string().min(1).max(200).required("Обязательно"),
+    description: yup.string().min(1).max(500).required("Обязательно"),
   });
   const params = useParams();
   const { getCarToEdit, carToEdit, saveEditedCar } = useContext(adminContext);
