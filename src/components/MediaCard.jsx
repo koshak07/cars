@@ -7,7 +7,7 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import { Link } from "react-router-dom";
 import { adminContext } from "../contexts/AdminContext";
 
-export const MediaCard = () => {
+export const MediaCard = (props) => {
   const { getCars, cars, deleteCar } = useContext(adminContext);
 
   useEffect(() => {

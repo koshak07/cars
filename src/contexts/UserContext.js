@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useEffect, useReducer, useState } from 'react';
 import { API } from '../helpers/API';
 
 export const userContext = createContext()
@@ -27,6 +27,8 @@ const UserContextProvider = (props) => {
         try {
             let filter = window.location.search
             const response = await axios(`${API}${filter}`)
+            // console.log(filter)
+            console.log(response.data)
             let action = {
                 type: "GET_CARS",
                 payload: response.data
@@ -49,12 +51,37 @@ const UserContextProvider = (props) => {
             console.log(e);
         }
     }
+
+    const [posts, setPosts] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(6);
+    useEffect(() => {
+      if (state.cars) {
+        const data = state.cars;
+        setPosts(data);
+      }
+    }, [state.cars]);
+
+     const numberOfLastPost = currentPage * postsPerPage;
+     const numberOfFirstPost = numberOfLastPost - postsPerPage;
+     const currentPosts = posts.slice(numberOfFirstPost, numberOfLastPost);
+     const totalPosts = posts.length;
+     const handlePage = (newPage) => {
+       setCurrentPage(newPage);
+     };
+     function resetCurrentPage() {
+       setCurrentPage(1);
+     }
+
     
     
     return (
         <userContext.Provider value={{
             getCars,
             getDetails,
+            handlePage,
+            currentPosts,
+            totalPosts,
             cars: state.cars,
             carDetails: state.carDetails,
         }}>
