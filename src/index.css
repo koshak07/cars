@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.add-page{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.add-page form{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.add-page form input{
+  margin: 5px;
+}
+.add-page form button{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.cars {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
