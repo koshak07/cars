@@ -1,9 +1,10 @@
 import React from 'react';
+import MediaCard from '../components/MediaCard';
 
 const MainPage = () => {
     return (
-        <div>
-            Main Page
+        <div className='cars'>
+            <MediaCard/>
         </div>
     );
 };
