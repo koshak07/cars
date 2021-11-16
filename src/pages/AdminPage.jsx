@@ -1,9 +1,20 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router';
 import MediaCard from "../components/MediaCard";
+import { userContext } from "../contexts/UserContext";
 
 const AdminPage = () => {
+  let navigate = useNavigate()
+  let email = localStorage.getItem("email")
+  useEffect(() => {
+    if(!email || email !== "nochnoibriz@gmail.com"){
+      navigate("/")
+    } 
+  },[])
+  
+
   return (
     <div className="cars">
 

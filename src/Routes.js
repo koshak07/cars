@@ -9,9 +9,12 @@ import UserContextProvider from "./contexts/UserContext";
 import MainPage from "./pages/MainPage";
 import DetailsPage from "./pages/DetailsPage";
 import CartPage from "./pages/CartPage";
+import AuthContextProvider from "./contexts/AuthContext";
 
 const MyRoutes = () => {
   return (
+    <AuthContextProvider>
+
     <UserContextProvider>
       <AdminContextProvider>
         <BrowserRouter>
@@ -27,6 +30,7 @@ const MyRoutes = () => {
         </BrowserRouter>
       </AdminContextProvider>
     </UserContextProvider>
+    </AuthContextProvider>
   );
 };
 

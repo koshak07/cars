@@ -1,6 +1,5 @@
-import { jsx } from "@emotion/react";
 import axios from "axios";
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useEffect, useReducer, useState } from "react";
 import { API } from "../helpers/API";
 import { calcSubPrice, calcTotalPrice } from "../helpers/const";
 
@@ -40,6 +39,7 @@ const UserContextProvider = (props) => {
         payload: response.data,
       };
       dispatch(action);
+      resetCurrentPage()
     } catch (e) {
       console.log(e);
     }
@@ -62,6 +62,8 @@ const UserContextProvider = (props) => {
   
   const addAndDelInCart = (car) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
+      console.log(cart);
+
     if (!cart) {
       cart = {
         cars: [],
@@ -114,17 +116,18 @@ const UserContextProvider = (props) => {
   //getting cart from localstorage
   const getCart =()=>{
       let cart = JSON.parse(localStorage.getItem('cart'))
+      
       if(!cart){
         cart ={
-            cars: [],
-            totalPrice: 0,
+          cars: [],
+          totalPrice: 0,
         }
-    }
-    let action = {
+      }
+      let action = {
         type: "GET_CART",
         payload: cart,
-    }
-    dispatch(action)
+      }
+      dispatch(action)
   }
   //change count in cart
 
@@ -145,7 +148,30 @@ const UserContextProvider = (props) => {
       getCart()
   }
 
+  //pagination
+  const [post, setPost] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postPerPage] = useState(6)
+  useEffect(()=>{
+    if(state.cars){
+      const data = state.cars
+      setPost(data)
+    }
+  }, [state.cars])
+  const numberOfLastPost = currentPage * postPerPage
+  const numberOfFirstPost = numberOfLastPost - postPerPage
+  const currentPost = post.slice(numberOfFirstPost, numberOfLastPost)
+  const totalPosts = post.length
+
+  const handlePage = (newPage)=>{
+    setCurrentPage(newPage)
+  }
+  function resetCurrentPage(){
+    setCurrentPage(1)
+  }
+
   return (
+
     <userContext.Provider
       value={{
         getCars,
@@ -154,9 +180,15 @@ const UserContextProvider = (props) => {
         checkInCart,
         getCart,
         changeCountInCart,
+        handlePage,
         cars: state.cars,
         carDetails: state.carDetails,
         carsCountInCart: state.carsCountInCart,
+        cart: state.cart,
+        totalPosts,
+        currentPost,
+        postPerPage,
+        currentPage,
       }}
     >
       {props.children}

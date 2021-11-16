@@ -9,18 +9,16 @@ import { adminContext } from "../contexts/AdminContext";
 import {userContext} from "../contexts/UserContext"
 
 export const MediaCard = ({props}) => {
-  console.log(props);
   const { getCars, cars, deleteCar } = useContext(adminContext);
   const {addAndDelInCart} = useContext(userContext)
   useEffect(() => {
     getCars();
   }, []);
-  // getCars()
   return (
     <>
       {cars ? (
         cars.map((item) => (
-          <Card key={item.id} sx={{ maxWidth: 345, width: "345px" }}>
+          <Card key={item.id} sx={{ maxWidth: 345, width: "345px", marginTop: "50px" }}>
             <CardActionArea>
               <CardMedia
                 component="img"

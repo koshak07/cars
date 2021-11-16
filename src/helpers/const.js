@@ -1,5 +1,4 @@
 export const calcSubPrice = (product) => {
-  console.log(product)
     return product.count * product.car.price;
   };
 export const calcTotalPrice = (cart) => {
