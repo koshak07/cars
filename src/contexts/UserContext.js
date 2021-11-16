@@ -1,7 +1,9 @@
+
 import axios from "axios";
 import React, { createContext, useEffect, useReducer, useState } from "react";
 import { API } from "../helpers/API";
 import { calcSubPrice, calcTotalPrice } from "../helpers/const";
+
 
 export const userContext = createContext();
 const INIT_STATE = {
@@ -45,6 +47,23 @@ const UserContextProvider = (props) => {
     }
   };
 
+
+    const [state, dispatch] = useReducer(reducer, INIT_STATE)
+    const getCars = async()=>{
+        try {
+            let filter = window.location.search
+            const response = await axios(`${API}${filter}`)
+            // console.log(filter)
+            console.log(response.data)
+            let action = {
+                type: "GET_CARS",
+                payload: response.data
+            }
+            dispatch(action)
+        } catch (e) {
+            console.log(e);
+        }
+
   const getDetails = async (id) => {
     try {
       const response = await axios(`${API}/${id}`);
@@ -55,6 +74,7 @@ const UserContextProvider = (props) => {
       dispatch(action);
     } catch (e) {
       console.log(e);
+
     }
   };
 
@@ -157,6 +177,7 @@ const UserContextProvider = (props) => {
       const data = state.cars
       setPost(data)
     }
+
   }, [state.cars])
   const numberOfLastPost = currentPage * postPerPage
   const numberOfFirstPost = numberOfLastPost - postPerPage
@@ -194,6 +215,7 @@ const UserContextProvider = (props) => {
       {props.children}
     </userContext.Provider>
   );
+
 };
 
 export default UserContextProvider;

@@ -9,6 +9,7 @@ import { adminContext } from "../contexts/AdminContext";
 import {userContext} from "../contexts/UserContext"
 
 export const MediaCard = ({props}) => {
+
   const { getCars, cars, deleteCar } = useContext(adminContext);
   const {addAndDelInCart} = useContext(userContext)
   useEffect(() => {
@@ -18,7 +19,9 @@ export const MediaCard = ({props}) => {
     <>
       {cars ? (
         cars.map((item) => (
+
           <Card key={item.id} sx={{ maxWidth: 345, width: "345px", marginTop: "50px" }}>
+
             <CardActionArea>
               <CardMedia
                 component="img"

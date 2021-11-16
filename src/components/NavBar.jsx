@@ -65,8 +65,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function NavBar() {
     let uuId = localStorage.getItem("uuId")
     const navigate = useNavigate();
+
     const {getCars, carsCountInCart} = React.useContext(userContext)
     const {authWithGoogle, user, logOut} = React.useContext(authContext)
+
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
