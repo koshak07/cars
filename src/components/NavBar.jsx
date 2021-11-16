@@ -17,6 +17,10 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { useNavigate } from 'react-router';
 import { userContext } from '../contexts/UserContext';
+import { Link } from 'react-router-dom';
+import { Logout, ShoppingCart } from '@mui/icons-material';
+import { Button } from '@mui/material';
+import { authContext } from '../contexts/AuthContext';
  
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -59,8 +63,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
  
 export default function NavBar() {
+    let uuId = localStorage.getItem("uuId")
     const navigate = useNavigate();
-    const {getCars} = React.useContext(userContext)
+
+    const {getCars, carsCountInCart} = React.useContext(userContext)
+    const {authWithGoogle, user, logOut} = React.useContext(authContext)
+
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
  
@@ -158,6 +167,49 @@ export default function NavBar() {
             </MenuItem>
         </Menu>
     );
+    let logout;
+    if (user) {
+
+        if(!uuId){
+            localStorage.setItem("email", user.email)
+        }
+
+        logout = (<>
+        <Typography
+            variant="h6"
+            component='div'
+            style={{display: 'flex', alignItems: "center"}}
+            >
+                {user.displayName}
+            </Typography>
+            <Link to="/">
+            
+        <IconButton
+        size="large"
+        edge="end"
+        aria-label="account of current user"
+        aria-controls={menuId}
+        aria-haspopup="true"
+        
+        onClick={logOut}
+        color="inherit"
+    >
+        <Logout/>
+    </IconButton>
+            </Link>
+    </>)
+    } else {
+        logout = (
+            <Button
+            onClick={authWithGoogle}
+            color="inherit"
+            variant="text"
+            >
+                Log in
+            </Button>
+        )
+
+    }
  
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -184,6 +236,7 @@ export default function NavBar() {
                     >
                         Cars
                     </Typography> 
+                   
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
@@ -195,11 +248,14 @@ export default function NavBar() {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <Link to="/cart">
+                            
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
-                                <MailIcon />
+                                <ShoppingCart />
                             </Badge>
                         </IconButton>
+                        </Link>
                         <IconButton
                             size="large"
                             aria-label="show 17 new notifications"
@@ -209,17 +265,8 @@ export default function NavBar() {
                                 <NotificationsIcon />
                             </Badge>
                         </IconButton>
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton>
+                       {logout}
+                        
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton

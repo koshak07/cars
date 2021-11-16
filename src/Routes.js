@@ -8,9 +8,13 @@ import AdminPage from "./pages/AdminPage";
 import UserContextProvider from "./contexts/UserContext";
 import MainPage from "./pages/MainPage";
 import DetailsPage from "./pages/DetailsPage";
+import CartPage from "./pages/CartPage";
+import AuthContextProvider from "./contexts/AuthContext";
 
 const MyRoutes = () => {
   return (
+    <AuthContextProvider>
+
     <UserContextProvider>
       <AdminContextProvider>
         <BrowserRouter>
@@ -19,12 +23,14 @@ const MyRoutes = () => {
             <Route path="/" element={<MainPage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/admin/add" element={<AddPage />} />
+            <Route path="/cart" element={<CartPage />} />
             <Route path="/admin/edit/:id" element={<EditPage />} />
             <Route path="/details/:id" element={<DetailsPage />} />
           </Routes>
         </BrowserRouter>
       </AdminContextProvider>
     </UserContextProvider>
+    </AuthContextProvider>
   );
 };
 

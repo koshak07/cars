@@ -34,3 +34,15 @@ code {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.main-page{
+  display: flex;
+  justify-content: space-between;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+.pagination ul{
+  display: flex;
+  list-style-type: none;
+}

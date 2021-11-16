@@ -6,22 +6,22 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { Link } from "react-router-dom";
 import { adminContext } from "../contexts/AdminContext";
+import {userContext} from "../contexts/UserContext"
 
-export const MediaCard = (props) => {
+export const MediaCard = ({props}) => {
+
   const { getCars, cars, deleteCar } = useContext(adminContext);
-
+  const {addAndDelInCart} = useContext(userContext)
   useEffect(() => {
     getCars();
   }, []);
-  // getCars()
   return (
     <>
       {cars ? (
         cars.map((item) => (
-          <Card
-            key={item.id}
-            sx={{ maxWidth: 345, width: "345px", marginTop: "50px" }}
-          >
+
+          <Card key={item.id} sx={{ maxWidth: 345, width: "345px", marginTop: "50px" }}>
+
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -50,6 +50,10 @@ export const MediaCard = (props) => {
                   {item.description}
                 </Typography>
               </CardContent>
+              <Button
+                size="small"
+                onClick={() => addAndDelInCart(props.item)}
+              ></Button>
             </CardActionArea>
             <CardActions>
               <Link to={`/admin/edit/${item.id}`}>

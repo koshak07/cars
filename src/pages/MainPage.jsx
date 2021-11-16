@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { userContext } from "../contexts/UserContext";
+
 import ToyotaModels from "../components/models/ToyotaModels";
 import LexusModels from "../components/models/LexusModels";
 
@@ -38,12 +39,17 @@ export const MainPage = () => {
     setBrandValue(object.get("brand"));
     //   console.log("SEARCH")
   }, [object]);
+
+import Pagination from "../components/Pagination";
+
+
   useEffect(() => {
     getCars();
   }, []);
 
   return (
     <>
+
       <div>
         {/* <FilterOnMainPage/> */}
         <div className=" sidebar">
@@ -143,6 +149,7 @@ export const MainPage = () => {
       ) : (
         <h2>Loading...</h2>
       )}
+
     </>
   );
 };
