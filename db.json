@@ -1,44 +1,284 @@
 {
   "cars": [
     {
-      "image": "https://i.cars.kg/preview/r/BsK286bTm-DDXTv22atyhA/1080x-/20211114/ab993e97f27b351634eb1254dbcdc41e.jpg",
-      "brand": "toyota",
-      "model": "supra",
+      "image": "https://s.auto.drom.ru/photo/JFQuM6TdLkASgPqXKBho5WI0CNIxiBYJJnnKDOpo_LkrdTSrU1l2azCpIS9U__R2sEWrmxGgrTSJKfRb3B-jEoNLjQFy.jpg",
+      "brand": "Lexus",
+      "model": "RC200t",
+      "color": "blue",
+      "yearOfIssue": "2016",
+      "price": "20000",
+      "description": " Машина в идеальном состоянии. Яркая эффектная зажигалка на каждый день. Птс в наличии, вместе поставим на вас на учёт. Вы будете первым собственником в кр!",
+      "id": 6
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/GiwuWZBu0EtMmTEubKscgukfURx3ppmjyssdqPyCrj9fQQoW8oxrEquOSURCn9gShDUOLJm-ITpcL_gxsPwF6XRjpos6.jpg",
+      "brand": "Lexus",
+      "model": "LX570",
       "color": "black",
-      "yearOfIssue": "1999",
-      "price": "15000",
-      "description": "SDSDSADA",
-      "id": 1
+      "yearOfIssue": "2016",
+      "price": "21000",
+      "description": "Обмен: Возможен Город: Петропавловск-Камчатский",
+      "id": 7
     },
     {
-      "image": "https://i.cars.kg/preview/r/BsK286bTm-DDXTv22atyhA/1080x-/20211114/ab993e97f27b351634eb1254dbcdc41e.jpg",
-      "brand": "toyota",
-      "model": "qwe",
+      "image": "https://s.auto.drom.ru/photo/iLeLtfWQQEOAIchtBO0ofB94f4u2kaW1BYSWyZPEutW0RsXT4VWSsXh6EMU-F-1UdlF6gH90_p6y1Cs6XUtHWpNxrVZW.jpg",
+      "brand": "Lexus",
+      "model": " GS250",
       "color": "black",
-      "yearOfIssue": "1999",
-      "price": "15000",
-      "description": "SDSDSADA",
-      "id": 5
+      "yearOfIssue": "2012",
+      "price": "16000",
+      "description": " Автомобиль в идеальном состоянии ..как внешне так и внутри..полностью обслужен ни каких вложений не требует и не потребует.  под плёнкой новый автомобиль.. до этой пленки .",
+      "id": 8
     },
     {
-      "image": "dasd",
-      "brand": "sdada",
-      "model": "wewqe",
-      "color": "dsdfas",
-      "yearOfIssue": "1515",
-      "price": "151515",
-      "description": "11212",
-      "id": 2
+      "image": "https://s.auto.drom.ru/photo/TDZdQ3H3-_tWMeiFAZZTA2mEf5L7a4sxf-Ipw2P6utkadmyhNCLth55eInRIYZ3xUnJ0gm8TBeZx9o-wHAUCL56jDKvF.jpg",
+      "brand": "Lexus",
+      "model": "RX270",
+      "color": "red",
+      "yearOfIssue": "2014",
+      "price": "18500",
+      "description": " Автосалон DrivExpo г.Новосибирск \"Экспоцентр\" Крупнейшая площадка Сибири автомобилей с пробегом .",
+      "id": 9
     },
     {
-      "image": "https://i.cars.kg/preview/r/vEtm8DW_BGHN-Sl4xld9Qg/1080x-/20211110/71be9a32fd0b70108a838e597243f531.jpg",
-      "brand": "mercedes-benz",
-      "model": "e-class",
+      "image": "https://s.auto.drom.ru/photo/T8m6qdAHaGz5WoAZcGwobbPLdpj6pN6KjqbWX89Gma_grGsr5eBsE2t9S7QJ98gMxxGoBwug0tiCoqgvhTIM3Ess8id1.jpg",
+      "brand": "Mercedes-Benz",
+      "model": "GLE Coupe",
+      "color": "silver",
+      "yearOfIssue": "2021",
+      "price": "20000",
+      "description": "Номер заказа: 0152410022  Экстерьер: Экстерьер AMG Line; Аварийное запасное колесо (докатка); Светодиодные задние фонари; Легкосплавные колесные диски размером 48, 3 см (19\") с 10 спицами;",
+      "id": 10
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/7Z9TIdCGkLzdjgmw7BObB7JJJ4kY861jaZuB8BItURZNrQsX82PxVX4_-YbaXrKyyawZRtur6a-NFTtXVWw1hCGwXVed.jpg",
+      "brand": "Mercedes-Benz",
+      "model": "S-Class",
       "color": "white",
-      "yearOfIssue": "2013",
-      "price": "8000",
-      "description": "fdfgdghgkjghjfgfdgfd",
-      "id": 3
+      "yearOfIssue": "2017",
+      "price": "21500",
+      "description": "Автомобиль как новый в идеальном состоянии с реальным пробегом.  ПТС выдан 8.10.2021 года. Без пробега по росии.  -Максимальная комплектация на панораме -Руль косточкам -Проектор спидометра на лобовом стекле -Круговой обзор камер -Подогрев охлаждение всех сидений.",
+      "id": 11
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/nk5t1fQBLR0Fd4AB98PKyPfzqdet58Dnsb1tjcpmpjjS3r5EjpQnyR53nimnsYGmxLidsa8Ym8PItjfZ_zJOWWf1mh94.jpg",
+      "brand": "Mercedes-Benz",
+      "model": "S-Class",
+      "color": "black",
+      "yearOfIssue": "2008",
+      "price": "24000",
+      "description": "AMG 55 компрессор в отличном техническом состоянии  Покупали в Альтаире в 2008 г  Две хозяйки за все время  Покупали у друзей  Родной пробег  Никакого колхоза  Весь в родных деталях.",
+      "id": 12
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/Q3lV-vCyOD-MoRt_XSzn8_AChS0JI6i4VIS4J7E-XGL7XTy61xU88KhZNN6Z3ic3yC-1RA6EwBK5wkPA_D2Lqy60wbKx.jpg",
+      "brand": "Land Rover",
+      "model": "Range Rover",
+      "color": "beige",
+      "yearOfIssue": "2018",
+      "price": "23000",
+      "description": "✅ ДОПОЛНИТЕЛЬНАЯ ВЫГОДА при покупке в КРЕДИТ ✅ ДОПОЛНИТЕЛЬНАЯ ВЫГОДА при ОБМЕНЕ на ваш автомобиль ✅ ВЫГОДЫ СУММИРУЮТСЯ!!!",
+      "id": 13
+    },
+    {
+      "image": "https://s.auto.drom.ru/i24240/r/photos/221649/big_1482637.jpg",
+      "brand": "Land Rover",
+      "model": "Range Rover",
+      "color": "black",
+      "yearOfIssue": "2015",
+      "price": "21000",
+      "description": "Всем бонжорно. Это отзыв о моей бывшей тачке. Недавно, я ее продал буквально \"со слезами на глазах\". Это был комфортный,удобный автомобиль на каждый день. Там было все)) В основном я использовал авто как маршрутку,чтобы доехать до работы и домой обратно. До этого я имел rr evoque 2014 года и был также рад. Сравнить эти машины, думаю, будет интересно.  Эвок, спортивная тачка, шустрая, двухдверная. Покупал я ее на механике с мотором 2.0 бенз, красный цвет.  Читать полностью: https://www.drom.ru/reviews/land_rover/range_rover/221649/  Дром — всероссийский автомобильный портал",
+      "id": 14
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/IaHyazX_eMd7XUUZ6Ndy7AIM_lg2qRzkpKJMk2XY_eQNlVvbjVyjq61I74lHgl9CwWf6I0-IGnQCc78f33xf_sKo9cto.jpg",
+      "brand": "BMW",
+      "model": "X6",
+      "color": "black",
+      "yearOfIssue": "2017",
+      "price": "18000",
+      "description": "Усилитель руля Гидравлическийусилитель Салон Кожа Кожаный руль Люк Обогрев Руля Передних сидений Электропривод Передних сидений Рулевой колонки Зеркал Помощи при вождении Парктроник задний Датчик дождя Датчик света",
+      "id": 15
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/MquPqxb9QBgo2LaHL6J7g2wEdix4iwKW4kTnW8gukhNhxaTmTIy3pC5N9XQf_3OFN7xzpK9RsMuAbQ-sq_zkSqlrnA44.jpg",
+      "brand": "BMW",
+      "model": "8-Series",
+      "color": "black",
+      "yearOfIssue": "2021",
+      "price": "25000",
+      "description": "АВТОПОРТ - ОФИЦИАЛЬНЫЙ ДИЛЕР BMW И MINI. ГАРАНТИРОВАННАЯ СКИДКА ДО 150 000 РУБ: ✅ ПРИ ОБМЕНЕ ВАШЕГО АВТОМОБИЛЯ (по системе TRADE-IN)* !!! ✅ ПРИ ПРИОБРИТЕНИИ ПОЛИСА КАСКО И ПОКУПКЕ АВТОМОБИЛЯ В КРЕДИТ* !!! ✅ ГАРАНТИРОВАННАЯ СКИДКА НА ДЕТЕЙЛИНГ В НАШЕМ ЦЕНТРЕ ДОП. ИНФОРМАЦИЯ ОБ АВТОМОБИЛЕ: ✅ ОТЛИЧНЫЙ ВНЕШНИЙ ВИД ✅ ПТС ОРИГИНАЛ, 1 ВЛАДЕЛЕЦ ✅ ОБСЛУЖИВАНИЕ У ОФИЦИАЛЬНОГО ДИЛЕРА ✅ ПРОВЕДЕНА КОМПЛЕКСНАЯ ТЕХНИЧЕСКАЯ ДИАГНОСТИКА ✅ ПОЛНЫЙ КОМПЛЕКТ КЛЮЧЕЙ ДОП. ОПЦИИ (заводские):",
+      "id": 16
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/8KwUCrjaENsM3z0FtiRsUejIFnx0NaNtLuQ04O0kUIVjDQfz4H-UgWaaKzRCVLtc4ujWZ0N0Ep-mv_2DW7hCPyRYhf2q.jpg",
+      "brand": "BMW",
+      "model": "M4",
+      "color": "yellow",
+      "yearOfIssue": "2021",
+      "price": "21000",
+      "description": "В продаже автомобиль от компании АО ABTODOM, официальный дилер (BMW, MINI, BMW i, BMW Motorrad) Автомобиль представлен в салоне АВТОДОМ МКАД 51-км., шоу-рум 2-этаж Цвет C4H Sao paulo gelb Обивка сидений X3G5 Недв.кожа Merino/yas-marina синий/черный 02T4 M спортивный дифференциал 02VF Адаптивная ходовая часть M 0431 Внутр.зеркало с автоматич.затемнением 0459 Эл.рег.положения сиденья с функц.памяти 0488 Поясничная опора водителя и перед.пасс. 0494 Система обогр.сиден.водителя/перед.пасс. 0534 Автоматическая система кондиционирования 0544 Круиз-контроль с функц. подтормаживания 0548 Спидометр",
+      "id": 17
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/8soiamYEyxar_7N_nDcSSZ1Kczu-ELKhaPPrjdgGlKfXezPEcTh67itexV-F5TGJIbZYXOhgKAa20_ykRJ6tOYRB3zJV.jpg",
+      "brand": " Ferrari",
+      "model": "Portofino",
+      "color": "red",
+      "yearOfIssue": "2018",
+      "price": "35000",
+      "description": " АВТОМОБИЛЬ С ПОЛНЫМ НДС! ВОЗМОЖНО ОФОРМЛЕНИЕ АВТО В ЛИЗИНГ!  Автомобиль полностью оклеен в анти-гравийную броне пленку SUNTEC!  Автомобиль на гарантии официального дилера 11.2021 года с возможностью продления гарантии!  Автомобиль в отличном внешнем и техническом состоянии. Своевременное обслуживание автомобиля у официального дилера, все ТО согласно регламенту. ДВА Владельца за все время эксплуатации авто. ПТС ОРИГИНАЛ, 2 ключа.",
+      "id": 18
+    },
+    {
+      "image": "https://www.pnzdrive.ru/uploads/news/2021/03/5/Ferrari-Purosangue-1.jpg",
+      "brand": "Ferrari",
+      "model": " Purosangue ",
+      "color": "red",
+      "yearOfIssue": "2021",
+      "price": "50000",
+      "description": "Первый в истории внедорожник Ferrari под именем Purosangue приближается к тому, чтобы стать реальностью. Ранее в Сети демонстрировались прототипы этой новинки. Тем не менее, независимый художник Георгий Тедорадзе создал две визуализации Purosangue, пытаясь представить возможное направление стиля для внедорожника.",
+      "id": 19
+    },
+    {
+      "image": "https://www.ayrey.co.uk/images/ww/ftp_jadcasts_user/bbr%2018185a.jpg,596,596,png",
+      "brand": "Ferrari",
+      "model": "Roma Titanium Grey",
+      "color": "titanium grey",
+      "yearOfIssue": "2020",
+      "price": "40000",
+      "description": "Доставка и возврат Условия и положения",
+      "id": 20
+    },
+    {
+      "image": "https://s1.avilon.ru/upload/resize_cache/iblock/03b/870_870_0/03b2eb4290790e19d37463fe7feb4d39.jpg",
+      "brand": "Rolls-Royce",
+      "model": "Dawn",
+      "color": "blue",
+      "yearOfIssue": "2019",
+      "price": "320000",
+      "description": "4 года гарантии без ограничения пробега A33 Полноразмерные зонты с тефлоновым покрытием, расположенные в передних крыльях A78 Самодиагностика и система автоматического контроля с выводом информации о состоянии а/м на дисплей A72 4 года бесплатное плановое ТО без ограничения пробега A34",
+      "id": 21
+    },
+    {
+      "image": "https://img.jamesedition.com/listing_images/2021/08/25/01/06/50/4b83e2ac-c075-4db6-b7a3-f242bdf7f229/je/600x354xc.jpg",
+      "brand": "Rolls-Royce",
+      "model": "Phantom",
+      "color": "white",
+      "yearOfIssue": "2020",
+      "price": "228000",
+      "description": "Rolls-Royce Phantom - необычайно роскошный четырехдверный седан. После того, как BMW купила Rolls-Royce в 1998 году, Phantom был первым Rolls-Royce, который был разработан и выпущен. Он носит то же имя, что и 6 предыдущих моделей Rolls-Royce, но не имеет никакого отношения к ним, кроме названия бренда. Рядом с обычным лимузином была также версия с увеличенной колесной базой для водителя, двухдверное купе и двухдверное купе с откидной крышкой, которое затем было заменено Rolls-Royce Dawn . Основными противниками Phantom являются Bentley Mulsanne и Maybach 62 .",
+      "id": 22
+    },
+    {
+      "image": "https://www.alainclass.com/wp-content/uploads/2019/07/5-VENENO.jpg",
+      "brand": "Lamborghini",
+      "model": "Veneno Roadster – 1 of 9",
+      "color": "Black | Red",
+      "yearOfIssue": "2014",
+      "price": "200000",
+      "description": "Lamborghini Veneno Roadster демонстрирует аэродинамическую эффективность гоночного прототипа на повседневных дорогах. Этот суперкар отличается оптимальной аэродинамикой, чтобы гарантировать устойчивость на быстрых поворотах и ​​поведение, как у гоночного прототипа. И все это на автомобиле, созданном для дороги. Идеальный автомобиль для любителей спортивного вождения. Из 9 Veneno это единственный с открытым углеродным волокном, что делает его еще более редким.",
+      "id": 23
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lamborghini_Sian_at_IAA_2019_IMG_0332.jpg/420px-Lamborghini_Sian_at_IAA_2019_IMG_0332.jpg",
+      "brand": "Lamborghini",
+      "model": "Sián FKP 37",
+      "color": "golden",
+      "yearOfIssue": "2020",
+      "price": "340000",
+      "description": "Основанный на Lamborghini Aventador , Sián FKP 37 делит двигатель с вариантом SVJ Aventador, но электродвигатель, встроенный в коробку передач, добавляет еще 25 кВт к выходной мощности. Другие модификации двигателя включают добавление титановых впускных клапанов, измененный блок управления двигателем и новую выхлопную систему, увеличивающую выходную мощность до 785 л.с. Общая выходная мощность составляет 819 л.с., что делает Sián самым мощным серийным Lamborghini. Двигатель соединен с 7-ступенчатой ​​автоматической механической коробкой передач , а в автомобиле используется система полного привода с электронным управлением и задним механическим самоблокирующимся дифференциалом для улучшения управляемости. ",
+      "id": 24
+    },
+    {
+      "image": "https://imgsrv2.voi.id/Kaxi5lE-G2TPp9PB60GssVJxFtSknjOapIuvAAed-7c/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy9lNWNhMjQ1Zi1hZjExLTQ2NWEtYTMwZS1jZDVhMDJhY2YwMjMvMjAxOTExMjYyMTEzLW1haW4uanBn.jpg",
+      "brand": "Lamborghini",
+      "model": "V12 Vision ",
+      "color": "gray",
+      "yearOfIssue": "2019",
+      "price": "260000",
+      "description": "Поставляется с брендом Lamborghini, конечно, V12 Vison GT имеет дизайн, который не сильно отличается от других дизайнов бешеных быков. Более того, в этом суперкаре по-прежнему используется двигатель v12 мощностью 819 лошадиных сил (единица мощности).",
+      "id": 25
+    },
+    {
+      "image": "https://www.diariomotor.com/imagenes/picscache/750x341c/porsche-macan-gts-01_750x341c.jpg",
+      "brand": "Porsche",
+      "model": "mason GTS",
+      "color": "red",
+      "yearOfIssue": "2015",
+      "price": "99000",
+      "description": "В Macan GTS, помимо подвески Porsche Active Suspension Management (PASM) , кузов был опущен еще на 15 миллиметров. Он также оснащен 20- дюймовыми колесами и дизайном RS Spyder с матовой черной отделкой. В качестве детали также интересно помнить, что Porsche Macan использует нетипичное решение в своей категории, а именно использование более широких шин на задней оси, чем спереди, характерный, более типичный для купе и спортивных автомобилей.",
+      "id": 26
+    },
+    {
+      "image": "https://www.wallpaperup.com/uploads/wallpapers/2016/01/30/884537/d3f367009841c355c88459bf4cf82e01.jpg",
+      "brand": "Porsche",
+      "model": "mason",
+      "color": "black",
+      "yearOfIssue": "2015",
+      "price": "120000",
+      "description": "На данный автомобиль действует специальное ценовое предложение и льготная процентная ставка по кредиту. Узнайте подробности по телефону или при визите Порше Центр Таганка. Цена действительная при покупке автомобиля в кредит по программе трейд-ин Порше Центр Таганка предлагает большой выбор автомобилей в наличии и ближайшей поставке.",
+      "id": 27
+    },
+    {
+      "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/subaru-forester-is-displayed-during-the-second-press-day-at-news-photo-1594126007.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*",
+      "brand": "Subaru",
+      "model": "Forester",
+      "color": "jasper green metallic",
+      "yearOfIssue": "2019",
+      "price": "24560",
+      "description": "Обычно он вмещает пять человек и имеет достаточно места для хранения вещей и функций, чтобы приспособиться к приключениям в глуши.",
+      "id": 28
+    },
+    {
+      "image": "https://static3.car.ru/uploaded/2021/11/9/fixed1480x800_a9f90ad9f617f0a9b723c20d0616ab9f.jpg",
+      "brand": "Subaru",
+      "model": "WRX S4",
+      "color": "blue",
+      "yearOfIssue": "2019",
+      "price": "30000",
+      "description": "Под капотом установлен 2,4 литровый атмосферный двигатель. Его мощность составляет 271 лошадиная сила. В паре с ним работает шестиступенчатая механическая коробка передач. Также представят модификацию, оснащенную бесступенчатым вариатором.",
+      "id": 29
+    },
+    {
+      "image": "https://car4play.ru/uploads/gallery/yoMrwS6iE7J9.jpg",
+      "brand": "Subaru",
+      "model": "BRZ",
+      "color": "white",
+      "yearOfIssue": "2015",
+      "price": "22000",
+      "description": "Салон автомобиля выполнен очень качественно и по-спортивному. Больше всего внимание притягивают спортивные ковшеобразные сиденья, отделанные алькантарой, двойная красная строчка руля, ручки кпп и ручника, декоративные карбоновые вставки, алюминиевые накладки на педали и огромная красная кнопка запуска двигателя, расположенная на центральной консоли. На 6,5-дюймовый дисплей системы мультимедиа также выводится изображение с камеры заднего вида.",
+      "id": 30
+    },
+    {
+      "image": "https://tarantas.news/uploads/images/2020/10/10/toy_001.jpg",
+      "brand": "Toyota",
+      "model": "Tundra",
+      "color": "black",
+      "yearOfIssue": "2017",
+      "price": "34000",
+      "description": "Toyota Tundra предлагается с двумя вариантами бензиновых силовых установок. В базовом исполнении под капотом будет находиться 4,6-литровый 8-цилиндровый двигатель 1UR-FE мощностью 310 л.с. и 439 Нм крутящего момента. ",
+      "id": 31
+    },
+    {
+      "image": "https://roadres.com/images/top/toyota/alphard-3.jpg",
+      "brand": "Toyota",
+      "model": "Alphard",
+      "color": "black",
+      "yearOfIssue": "2020",
+      "price": "21500",
+      "description": "Тойота Альфард 2020 один из топовых минивэнов, которые пользуются стабильным спросом и любовью покупателей.",
+      "id": 32
+    },
+    {
+      "image": "https://cdn.motor1.com/images/mgl/vpzgY/s1/2013-405688-2014-toyota-corolla-u-s-spec-27-08-20131.jpg",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "color": "white",
+      "yearOfIssue": "2014",
+      "price": "18000",
+      "description": "ПРОДАМ  В ОТЛИЧНОМ СОСТОЯНИЙ , ОДИН ХОЗЯИН , С 2015 ГОДА В РФ, АУКЦИОН 4 БАЛЛА, ВЕСЬ В РОДНОЙ КРАСКЕ!!! САЛОН ВЕСЬ ЦЕЛЫЙ , ХОРОШИЕ ЧЕХЛЫ, ВИДЕОРЕГИСТРАТОР.",
+      "id": 33
     }
   ]
 }

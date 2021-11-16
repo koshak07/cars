@@ -13,7 +13,7 @@ const AddPage = () => {
     color: yup.string().min(1).max(200).required("Обязательно"),
     yearOfIssue: yup.number().min(1).required("Обязательно"),
     price: yup.number().min(1).required("Обязательно"),
-    description: yup.string().min(1).max(200).required("Обязательно"),
+    description: yup.string().min(1).max(1000).required("Обязательно"),
   });
   //стягиваем addcar с аюзерконтекста
   const { addCar } = useContext(adminContext);

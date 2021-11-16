@@ -18,7 +18,10 @@ export const MediaCard = (props) => {
     <>
       {cars ? (
         cars.map((item) => (
-          <Card key={item.id} sx={{ maxWidth: 345, width: "345px" }}>
+          <Card
+            key={item.id}
+            sx={{ maxWidth: 345, width: "345px", marginTop: "50px" }}
+          >
             <CardActionArea>
               <CardMedia
                 component="img"
@@ -50,12 +53,15 @@ export const MediaCard = (props) => {
             </CardActionArea>
             <CardActions>
               <Link to={`/admin/edit/${item.id}`}>
-
-              <Button size="small" color="primary">
-                Edit Car
-              </Button>
+                <Button size="small" color="primary">
+                  Edit Car
+                </Button>
               </Link>
-              <Button onClick={()=> deleteCar(item.id)} size="small" color="error">
+              <Button
+                onClick={() => deleteCar(item.id)}
+                size="small"
+                color="error"
+              >
                 Delete
               </Button>
             </CardActions>

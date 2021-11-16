@@ -3,9 +3,23 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
+import {
+  Button,
+  CardActionArea,
+  CardActions,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  InputLabel,
+  MenuItem,
+  Radio,
+  RadioGroup,
+  Select,
+} from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { userContext } from "../contexts/UserContext";
+import ToyotaModels from "../components/models/ToyotaModels";
+import LexusModels from "../components/models/LexusModels";
 
 export const MainPage = () => {
   const navigate = useNavigate();
@@ -24,14 +38,38 @@ export const MainPage = () => {
     setBrandValue(object.get("brand"));
     //   console.log("SEARCH")
   }, [object]);
-  useEffect(()=>{getCars()},[])
+  useEffect(() => {
+    getCars();
+  }, []);
 
   return (
     <>
       <div>
         {/* <FilterOnMainPage/> */}
         <div className=" sidebar">
-          <FormControl component="fieldset">
+          <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+            <InputLabel id="demo-simple-select-standard-label">
+              Brand
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-standard-label"
+              id="demo-simple-select-standard"
+              value={brandValue}
+              onChange={(e) => {
+                filterCars("brand", e.target.value);
+              }}
+              label="Brand"
+            >
+              <MenuItem value="">
+                <em>Выберите бренд</em>
+              </MenuItem>
+              <MenuItem value="toyota">Toyota</MenuItem>
+              <MenuItem value="lexus">Lexus</MenuItem>
+              <MenuItem value="merc">Merc</MenuItem>
+            </Select>
+          </FormControl>
+
+          {/* <FormControl component="fieldset">
             <FormLabel component="legend">Brand</FormLabel>
             <RadioGroup
               aria-label="gender"
@@ -46,24 +84,18 @@ export const MainPage = () => {
                 control={<Radio />}
                 label="toyota"
               />
-              {/* <FormControlLabel
-                  value="Sumsung"
-                  control={<Radio />}
-                  label="Sumsung"
-                /> */}
-              {/* <FormControlLabel
-                  value="Apple"
-                  control={<Radio />}
-                  label="Apple"
-                /> */}
-              {/* <FormControlLabel
-                  value="Huawei"
-                  control={<Radio />}
-                  label="Huawei"
-                /> */}
-              <FormControlLabel value="sdada" control={<Radio />} label="Mi" />
+              <FormControlLabel
+                value="lexus"
+                control={<Radio />}
+                label="Lexus"
+              />
             </RadioGroup>
-          </FormControl>
+          </FormControl> */}
+          {brandValue === "toyota" ? (
+            <ToyotaModels brandValue={brandValue} filterCars={filterCars} />
+          ) : brandValue === "lexus" ? (
+            <LexusModels brandValue={brandValue} filterCars={filterCars} />
+          ) : null}
         </div>
       </div>
       {cars ? (
