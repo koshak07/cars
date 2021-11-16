@@ -7,7 +7,7 @@
       "color": "black",
       "yearOfIssue": "1999",
       "price": "15000",
-      "description": "SDSDSADA",
+      "description": "asfafafagagga",
       "id": 1
     },
     {
@@ -29,6 +29,16 @@
       "price": "12000",
       "description": "Limited edition! 5.7 газ-бензин! Полный привод. С 2019 года в одних руках! Два монитора,камера заднего вида,подогрев сидений,климат контроль и т.д. Состояние исключительного авто ! Машина прошла полное Т/О. Сделан Аквапринт.",
       "id": 3
+    },
+    {
+      "image": "https://s.auto.drom.ru/photo/iu-UngYyB4KRimDjJ1kvu0yH4bmWpPj9ttBiKs21r9lhNMkXpUgbSP_Qsb1-0wMovD10mJDvCkf0P4M9bhFJYsxCP52j.jpg",
+      "brand": "mersedes",
+      "model": "benz",
+      "color": "white",
+      "yearOfIssue": "2012",
+      "price": "10000",
+      "description": "tr;lk;lk;ll",
+      "id": 4
     }
   ]
 }

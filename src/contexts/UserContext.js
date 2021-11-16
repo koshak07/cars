@@ -2,6 +2,7 @@ import { jsx } from "@emotion/react";
 import axios from "axios";
 import React, { createContext, useReducer } from "react";
 import { API } from "../helpers/API";
+import { calcSubPrice, calcTotalPrice } from "../helpers/const";
 
 export const userContext = createContext();
 const INIT_STATE = {
@@ -10,7 +11,7 @@ const INIT_STATE = {
   carsCountInCart: JSON.parse(localStorage.getItem("cart"))
     ? JSON.parse(localStorage.getItem("cart")).cars.length
     : 0,
-    cart: 0,
+    cart: null,
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -58,16 +59,7 @@ const UserContextProvider = (props) => {
   };
 
   //cart and sum price
-  const calcSubPrice = (product) => {
-    return product.count * product.car.price;
-  };
-  const calcTotalPrice = (cart) => {
-    let sum = 0;
-    cart.car.forEach((i) => {
-      sum += i.subPrice;
-    });
-    return sum;
-  };
+  
   const addAndDelInCart = (car) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
@@ -82,21 +74,22 @@ const UserContextProvider = (props) => {
       subPrice: 0,
     };
     product.subPrice = calcSubPrice(product);
-    let checkArr = cart.car.filter((i) => {
-      return i.cart.id === car.id;
+    let checkArr = cart.cars.filter((i) => {
+        // console.log(checkArr);
+      return i.car.id === car.id;
     });
     if (checkArr.length === 0) {
-      cart.car.push(product);
+      cart.cars.push(product);
     } else {
-      cart.car = cart.car.filter((i) => {
-        return i.car !== car.id;
+      cart.cars = cart.cars.filter((i) => {
+        return i.car.id !== car.id;
       });
     }
     cart.totalPrice = calcTotalPrice(cart);
-    localStorage.getItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
     let action = {
       type: "ADD_AND_DEL_IN_CART",
-      payload: cart.car.length,
+      payload: cart.cars.length,
     };
     dispatch(action);
   };
@@ -110,7 +103,7 @@ const UserContextProvider = (props) => {
           }
       }
       let checkArr = cart.cars.filter((i)=>{
-          return i.cars.id === id
+          return i.car.id === id
       })
       if(checkArr.length === 0){
           return false
@@ -136,7 +129,9 @@ const UserContextProvider = (props) => {
   //change count in cart
 
   const changeCountInCart = (count, id)=>{
-      if(count<1) return
+      if(count<1) {
+         return 
+      }
       let cart = JSON.parse(localStorage.getItem('cart'))
       cart.cars = cart.cars.map(i=>{
           if(i.car.id === id){
