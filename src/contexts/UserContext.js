@@ -3,16 +3,18 @@ import axios from "axios";
 import React, { createContext, useEffect, useReducer, useState } from "react";
 import { API } from "../helpers/API";
 import { calcSubPrice, calcTotalPrice } from "../helpers/const";
+import "react-credit-cards/es/styles-compiled.css"
 
 
 export const userContext = createContext();
 const INIT_STATE = {
   cars: null,
   carDetails: null,
-  carsCountInCart: JSON.parse(localStorage.getItem("cart"))
+  carsCountInCart: localStorage.getItem("cart")
     ? JSON.parse(localStorage.getItem("cart")).cars.length
     : 0,
     cart: null,
+  
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -24,7 +26,7 @@ const reducer = (state = INIT_STATE, action) => {
     case "ADD_AND_DEL_IN_CART":
       return { ...state, carsCountInCart: action.payload };
     case "GET_CART":
-        return {...state, cart: action.payload}  
+        return {...state, cart: action.payload}  ;
     default:
       return state;
   }
@@ -82,7 +84,6 @@ const UserContextProvider = (props) => {
     };
     product.subPrice = calcSubPrice(product);
     let checkArr = cart.cars.filter((i) => {
-        // console.log(checkArr);
       return i.car.id === car.id;
     });
     if (checkArr.length === 0) {
@@ -100,6 +101,15 @@ const UserContextProvider = (props) => {
     };
     dispatch(action);
   };
+  const updateBadgeLenght = () => {
+    let cart = localStorage.getItem('cart')
+    let count = cart ? JSON.parse(cart).cars.lenght : 0;
+    dispatch({
+      type: "ADD_AND_DEL_IN_CART",
+      payload: count
+    })
+
+  }
   //check cart
   const checkInCart = (id)=>{
       let cart = JSON.parse(localStorage.getItem("cart"));
@@ -152,6 +162,7 @@ const UserContextProvider = (props) => {
       localStorage.setItem('cart', JSON.stringify(cart))
       getCart()
   }
+  
 
   //pagination
   const [post, setPost] = useState([])
@@ -187,6 +198,7 @@ const UserContextProvider = (props) => {
         getCart,
         changeCountInCart,
         handlePage,
+        updateBadgeLenght,
         cars: state.cars,
         carDetails: state.carDetails,
         carsCountInCart: state.carsCountInCart,

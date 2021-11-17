@@ -46,3 +46,12 @@ code {
   display: flex;
   list-style-type: none;
 }
+.filter{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(236, 179, 179);
+}
+
+.css-v526sl-MuiPaper-root-MuiAppBar-root{
+  background-image: url(http://fonday.ru/images/tmp/11/9/original/11985HhTmgvqBdKlCeoaEAVN.jpg);
+}
