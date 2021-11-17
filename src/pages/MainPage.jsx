@@ -27,23 +27,35 @@ export const MainPage = () => {
   const navigate = useNavigate();
   const { getCars, cars, currentPost } = useContext(userContext);
   const [brandValue, setBrandValue] = useState("");
+  const [modelValue, setModelValue] = useState("")
   let object = new URLSearchParams(window.location.search);
   function filterCars(key, value) {
-    // console.log(key,value);
+    console.log(key,value);
     object.set(key, value);
     let newUrl = `${window.location.pathname}?${object.toString()}`;
     navigate(newUrl);
     getCars();
     setBrandValue(value);
   }
+  function filterCarsModel (key,value) {
+    console.log(key,value);
+    object.set(key, value)
+    let newUrl = `${window.location.pathname}?${object.toString()}`
+    navigate(newUrl)
+    getCars()
+    setModelValue(value)
+  }
   useEffect(() => {
     setBrandValue(object.get("brand"));
     //   console.log("SEARCH")
   }, [object]);
-
+  useEffect(()=>{
+    setModelValue(object.get("model"))
+  },[object])
   useEffect(() => {
     getCars();
   }, []);
+
 
   return (
     <>
@@ -72,32 +84,10 @@ export const MainPage = () => {
             </Select>
           </FormControl>
 
-          {/* <FormControl component="fieldset">
-            <FormLabel component="legend">Brand</FormLabel>
-            <RadioGroup
-              aria-label="gender"
-              value={brandValue}
-              name="radio-buttons-group"
-              onChange={(e) => {
-                filterCars("brand", e.target.value);
-              }}
-            >
-              <FormControlLabel
-                value="toyota"
-                control={<Radio />}
-                label="toyota"
-              />
-              <FormControlLabel
-                value="lexus"
-                control={<Radio />}
-                label="Lexus"
-              />
-            </RadioGroup>
-          </FormControl> */}
           {brandValue === "Toyota" ? (
-            <ToyotaModels brandValue={brandValue} filterCars={filterCars} />
+            <ToyotaModels modelValue={modelValue} filterCarsModel={filterCarsModel} />
           ) : brandValue === "Lexus" ? (
-            <LexusModels brandValue={brandValue} filterCars={filterCars} />
+            <LexusModels modelValue={modelValue} filterCarsModel={filterCarsModel} />
           ) : null}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
 
-const ToyotaModels = ({ modelValue, filterCarsModel }) => {
+const BMWModels = ({ modelValue, filterCarsModel }) => {
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
@@ -18,13 +18,13 @@ const ToyotaModels = ({ modelValue, filterCarsModel }) => {
           <MenuItem value="">
             <em>Выберите бренд</em>
           </MenuItem>
-          <MenuItem value="Tundra">Tundra</MenuItem>
-          <MenuItem value="Alphard">Alphard</MenuItem>
-          <MenuItem value="Corolla">Corolla</MenuItem>
+          <MenuItem value="X6">X6</MenuItem>
+          <MenuItem value="8-Series">8-Series</MenuItem>
+          <MenuItem value="M4">M4</MenuItem>
         </Select>
       </FormControl>
     </div>
   );
 };
 
-export default ToyotaModels;
+export default BMWModels;
