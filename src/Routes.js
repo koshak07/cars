@@ -10,6 +10,7 @@ import MainPage from "./pages/MainPage";
 import DetailsPage from "./pages/DetailsPage";
 import CartPage from "./pages/CartPage";
 import AuthContextProvider from "./contexts/AuthContext";
+import OrderPage from "./pages/OrderPage";
 
 const MyRoutes = () => {
   return (
@@ -26,6 +27,7 @@ const MyRoutes = () => {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/admin/edit/:id" element={<EditPage />} />
             <Route path="/details/:id" element={<DetailsPage />} />
+            <Route path="/cart/order" element={<OrderPage/>}/>
           </Routes>
         </BrowserRouter>
       </AdminContextProvider>

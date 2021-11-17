@@ -5,6 +5,7 @@ const LexusModels = ({ modelValue, filterCarsModel }) => {
   
   return (
     <div>
+
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-standard-label">Model</InputLabel>
         <Select
@@ -25,6 +26,7 @@ const LexusModels = ({ modelValue, filterCarsModel }) => {
           <MenuItem value="RX270">RX270</MenuItem>
         </Select>
       </FormControl>
+
     </div>
   );
 };
