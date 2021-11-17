@@ -27,16 +27,19 @@ export const MainPage = () => {
   const navigate = useNavigate();
   const { getCars, cars, currentPost } = useContext(userContext);
   const [brandValue, setBrandValue] = useState("");
+
   const [modelValue, setModelValue] = useState("");
   const [colorValue, setColorValue] = useState("")
   let object = new URLSearchParams(window.location.search);
   function filterCars(key, value) {
+
     object.set(key, value);
     let newUrl = `${window.location.pathname}?${object.toString()}`;
     navigate(newUrl);
     getCars();
     setBrandValue(value);
   }
+
   function filterCarsModel(key, value) {
     object.set(key, value);
     let newUrl = `${window.location.pathname}?${object.toString()}`;
@@ -50,19 +53,23 @@ export const MainPage = () => {
     navigate(newUrl);
     getCars();
     setModelValue(value);
+
   }
   useEffect(() => {
     setBrandValue(object.get("brand"));
   }, [object]);
+
   useEffect(() => {
     setModelValue(object.get("model"));
   }, [object]);
   useEffect(() => {
     setColorValue(object.get("color"));
   }, [object]);
+
   useEffect(() => {
     getCars();
   }, []);
+
 
   return (
     <>
@@ -90,6 +97,8 @@ export const MainPage = () => {
               <MenuItem value="merc">Merc</MenuItem>
             </Select>
           </FormControl>
+
+
               {/* model */}
           {brandValue === "Toyota" ? (
             <ToyotaModels
