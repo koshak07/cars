@@ -48,22 +48,7 @@ const UserContextProvider = (props) => {
   };
 
 
-    const [state, dispatch] = useReducer(reducer, INIT_STATE)
-    const getCars = async()=>{
-        try {
-            let filter = window.location.search
-            const response = await axios(`${API}${filter}`)
-            // console.log(filter)
-            console.log(response.data)
-            let action = {
-                type: "GET_CARS",
-                payload: response.data
-            }
-            dispatch(action)
-        } catch (e) {
-            console.log(e);
-        }
-
+    
   const getDetails = async (id) => {
     try {
       const response = await axios(`${API}/${id}`);

@@ -21,10 +21,11 @@ import { userContext } from "../contexts/UserContext";
 
 import ToyotaModels from "../components/models/ToyotaModels";
 import LexusModels from "../components/models/LexusModels";
+import Pagination from "../components/Pagination";
 
 export const MainPage = () => {
   const navigate = useNavigate();
-  const { getCars, cars, currentPosts } = useContext(userContext);
+  const { getCars, cars, currentPost } = useContext(userContext);
   const [brandValue, setBrandValue] = useState("");
   let object = new URLSearchParams(window.location.search);
   function filterCars(key, value) {
@@ -40,17 +41,13 @@ export const MainPage = () => {
     //   console.log("SEARCH")
   }, [object]);
 
-import Pagination from "../components/Pagination";
-
-
   useEffect(() => {
     getCars();
   }, []);
 
   return (
     <>
-
-      <div>
+      <div className="main-page">
         {/* <FilterOnMainPage/> */}
         <div className=" sidebar">
           <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
@@ -69,8 +66,8 @@ import Pagination from "../components/Pagination";
               <MenuItem value="">
                 <em>Выберите бренд</em>
               </MenuItem>
-              <MenuItem value="toyota">Toyota</MenuItem>
-              <MenuItem value="lexus">Lexus</MenuItem>
+              <MenuItem value="Toyota">Toyota</MenuItem>
+              <MenuItem value="Lexus">Lexus</MenuItem>
               <MenuItem value="merc">Merc</MenuItem>
             </Select>
           </FormControl>
@@ -97,15 +94,17 @@ import Pagination from "../components/Pagination";
               />
             </RadioGroup>
           </FormControl> */}
-          {brandValue === "toyota" ? (
+          {brandValue === "Toyota" ? (
             <ToyotaModels brandValue={brandValue} filterCars={filterCars} />
-          ) : brandValue === "lexus" ? (
+          ) : brandValue === "Lexus" ? (
             <LexusModels brandValue={brandValue} filterCars={filterCars} />
           ) : null}
         </div>
       </div>
-      {cars ? (
-        cars.map((item) => (
+      <div className="cars">
+
+      {currentPost ? (
+        currentPost.map((item) => (
           <Card key={item.id} sx={{ maxWidth: 345, width: "345px" }}>
             <CardActionArea>
               <CardMedia
@@ -149,7 +148,10 @@ import Pagination from "../components/Pagination";
       ) : (
         <h2>Loading...</h2>
       )}
-
+      </div>
+      <div>
+        <Pagination />
+      </div>
     </>
   );
 };
