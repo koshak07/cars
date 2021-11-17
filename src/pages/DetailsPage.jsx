@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { userContext } from "../contexts/UserContext";
 
 const DetailsPage = (props) => {
-  const { getDetails, carDetails, addAndDelInCart } = useContext(userContext);
+  const { getDetails, carDetails, addAndDelInCart, checkInCart } = useContext(userContext);
   const params = useParams();
   // console.log(params.id);
   useEffect(() => {
@@ -37,14 +37,14 @@ const DetailsPage = (props) => {
                 </li>
                 <li>
                   <strong>Price:</strong>
-                  <span>{carDetails.price}</span>
+                  <span>{carDetails.price}$</span>
                 </li>
               </ul>
               <p>{carDetails.description}</p>
             </div>
 
             <Button size="small" onClick={() => addAndDelInCart(carDetails)}>
-              Make a request
+              {checkInCart(carDetails.id) ? <h2>Requested</h2>:<h2>Make a request</h2>}
             </Button>
           </div>
         </div>
