@@ -54,7 +54,7 @@ const OrderPage = () => {
             .string()
             .min(4, "Минимальное количество символов 6")
             .max(150, "Максимальное количество символов 150")
-            .required("Данное поле обязательно для заполнения"),
+            // .required("Данное поле обязательно для заполнения"),
     })
 
     const { cart, getCart, updateBadgeLenght } = useContext(userContext)
@@ -120,10 +120,10 @@ const OrderPage = () => {
                                     </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail32">
-                                    <Form.Label>Ваше время</Form.Label>
+                                    <Form.Label>Комментарий</Form.Label>
                                     <Form.Control
-                                        type="time"
-                                        placeholder="Введите время"
+                                        type="text"
+                                        placeholder="Комментарий к заказу"
                                         name="time"
                                         onChange={handleChange}
                                         isValid={!errors.time && touched.time}
