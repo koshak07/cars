@@ -17,11 +17,10 @@ const DetailsPage = (props) => {
     <div>
       {carDetails ? (
         <div className="detail-page">
-          Details Page
           <div className="detail-image">
             <img src={carDetails.image} alt="" />
           </div>
-          <div>
+          <div className= "detail-info">
             <h2>{carDetails.brand}</h2>
             <h3>{carDetails.model}</h3>
 
