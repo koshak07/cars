@@ -20,7 +20,7 @@ const MercModels = ({ modelValue, filterCarsModel }) => {
           </MenuItem>
           <MenuItem value="GLE Coupe">GLE Coupe</MenuItem>
           <MenuItem value="S-Class">S-Class</MenuItem>
-          <MenuItem value="S-Class">S-Class</MenuItem>
+          <MenuItem value="G-Class">G-Class</MenuItem>
         </Select>
       </FormControl>
     </div>

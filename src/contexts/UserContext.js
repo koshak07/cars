@@ -167,7 +167,7 @@ const UserContextProvider = (props) => {
   //pagination
   const [post, setPost] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage] = useState(6)
+  const [postPerPage] = useState(8)
   useEffect(()=>{
     if(state.cars){
       const data = state.cars

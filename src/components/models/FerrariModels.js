@@ -18,11 +18,12 @@ const FerrariModels = ({ modelValue, filterCarsModel }) => {
           <MenuItem value="">
             <em>Выберите бренд</em>
           </MenuItem>
-          <MenuItem value="Portofino">Portofino</MenuItem>
+          <MenuItem value="Mono">Portofino</MenuItem>
           <MenuItem value="Purosangue">Purosangue</MenuItem>
-          <MenuItem value="Roma Titanium Grey">Roma Titanium Grey</MenuItem>
+          <MenuItem value="Titanium">Roma Titanium Grey</MenuItem>
         </Select>
       </FormControl>
+      
     </div>
   );
 };

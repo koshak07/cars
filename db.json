@@ -63,7 +63,7 @@
     {
       "image": "https://s.auto.drom.ru/photo/nk5t1fQBLR0Fd4AB98PKyPfzqdet58Dnsb1tjcpmpjjS3r5EjpQnyR53nimnsYGmxLidsa8Ym8PItjfZ_zJOWWf1mh94.jpg",
       "brand": "Mercedes-Benz",
-      "model": "S-Class",
+      "model": "G-Class",
       "color": "black",
       "yearOfIssue": "2008",
       "price": "24000",
@@ -72,7 +72,7 @@
     },
     {
       "image": "https://s.auto.drom.ru/photo/Q3lV-vCyOD-MoRt_XSzn8_AChS0JI6i4VIS4J7E-XGL7XTy61xU88KhZNN6Z3ic3yC-1RA6EwBK5wkPA_D2Lqy60wbKx.jpg",
-      "brand": "Land Rover",
+      "brand": "LandRover",
       "model": "Range Rover",
       "color": "beige",
       "yearOfIssue": "2018",
@@ -82,7 +82,7 @@
     },
     {
       "image": "https://s.auto.drom.ru/i24240/r/photos/221649/big_1482637.jpg",
-      "brand": "Land Rover",
+      "brand": "LandRover",
       "model": "Range Rover",
       "color": "black",
       "yearOfIssue": "2015",
@@ -122,8 +122,8 @@
     },
     {
       "image": "https://s.auto.drom.ru/photo/8soiamYEyxar_7N_nDcSSZ1Kczu-ELKhaPPrjdgGlKfXezPEcTh67itexV-F5TGJIbZYXOhgKAa20_ykRJ6tOYRB3zJV.jpg",
-      "brand": " Ferrari",
-      "model": "Portofino",
+      "brand": "Ferrari",
+      "model": "Mono",
       "color": "red",
       "yearOfIssue": "2018",
       "price": "35000",
@@ -133,7 +133,7 @@
     {
       "image": "https://www.pnzdrive.ru/uploads/news/2021/03/5/Ferrari-Purosangue-1.jpg",
       "brand": "Ferrari",
-      "model": " Purosangue ",
+      "model": "Purosangue",
       "color": "red",
       "yearOfIssue": "2021",
       "price": "50000",
@@ -143,7 +143,7 @@
     {
       "image": "https://www.ayrey.co.uk/images/ww/ftp_jadcasts_user/bbr%2018185a.jpg,596,596,png",
       "brand": "Ferrari",
-      "model": "Roma Titanium Grey",
+      "model": "Titanium",
       "color": "titanium grey",
       "yearOfIssue": "2020",
       "price": "40000",
@@ -193,7 +193,7 @@
     {
       "image": "https://imgsrv2.voi.id/Kaxi5lE-G2TPp9PB60GssVJxFtSknjOapIuvAAed-7c/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy9lNWNhMjQ1Zi1hZjExLTQ2NWEtYTMwZS1jZDVhMDJhY2YwMjMvMjAxOTExMjYyMTEzLW1haW4uanBn.jpg",
       "brand": "Lamborghini",
-      "model": "V12 Vision ",
+      "model": "V12 Vision FKP 37",
       "color": "gray",
       "yearOfIssue": "2019",
       "price": "260000",

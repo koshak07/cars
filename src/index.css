@@ -1,57 +1,91 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.add-page{
+/* Add Page */
+
+.add-page {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.add-page form{
+.add-page form {
   display: flex;
   flex-direction: column;
   width: 400px;
 }
-.add-page form input{
+.add-page form input {
   margin: 5px;
 }
-.add-page form button{
+.add-page form button {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+/* Main page */
+.main-page {
+  display: flex;
+  justify-content: center;
+  background: rgb(171, 175, 182);
+}
+
 .cars {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf1LcjCG70HjIKlviK7KHCCKP2RL5EYF35WeSUcB4Jkx1DQCmy1vF9Ca5lgU34H545jYs&usqp=CAU);
 }
-.main-page{
-  display: flex;
-  justify-content: space-between;
+.cars link {
+  background-color: "green";
 }
-.pagination{
+
+.pagination {
   display: flex;
   justify-content: center;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf1LcjCG70HjIKlviK7KHCCKP2RL5EYF35WeSUcB4Jkx1DQCmy1vF9Ca5lgU34H545jYs&usqp=CAU);
 }
-.pagination ul{
+.pagination ul {
   display: flex;
   list-style-type: none;
 }
-.filter{
+.filter {
   display: flex;
-  justify-content: space-between;
-  background-color: rgb(236, 179, 179);
+  justify-content: center;
+  margin: 0.5em;
+  background-color: rgb(218, 222, 230);
 }
 
-.css-v526sl-MuiPaper-root-MuiAppBar-root{
-  background-image: url(http://fonday.ru/images/tmp/11/9/original/11985HhTmgvqBdKlCeoaEAVN.jpg);
+.css-v526sl-MuiPaper-root-MuiAppBar-root {
+  background-image: url(https://phonoteka.org/uploads/posts/2021-04/1618467315_47-p-belii-kirpichnii-fon-47.jpg);
+}
+
+/* Detail Page */
+
+.detail-page {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.1em;
+  background: rgb(171, 175, 182);
+}
+.detail-image {
+  margin: 0.5em;
+}
+.detail-info {
+  margin: 0.5em;
+  width: 40em;
+}
+/* cart page */
+
+.cart{
+  background: rgb(171, 175, 182);
+
 }

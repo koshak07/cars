@@ -18,10 +18,18 @@ import {
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { userContext } from "../contexts/UserContext";
+import Pagination from "../components/Pagination";
 
 import ToyotaModels from "../components/models/ToyotaModels";
 import LexusModels from "../components/models/LexusModels";
-import Pagination from "../components/Pagination";
+import MercModels from "../components/models/MercModels";
+import BMWModels from "../components/models/BMWModels"
+import FerrariModels from "../components/models/FerrariModels"
+import LamborghiniModels from "../components/models/LamborghiniModels"
+import LandRoverModels from "../components/models/LandRoverModels"
+import PorscheModels from "../components/models/PorscheModel"
+import RollsRoyceModels from "../components/models/RollsRoyceModels"
+import SubaruModels from "../components/models/SubaruModels"
 
 export const MainPage = () => {
   const navigate = useNavigate();
@@ -94,7 +102,14 @@ export const MainPage = () => {
               </MenuItem>
               <MenuItem value="Toyota">Toyota</MenuItem>
               <MenuItem value="Lexus">Lexus</MenuItem>
-              <MenuItem value="merc">Merc</MenuItem>
+              <MenuItem value="Mercedes-Benz">Mercedes-Benz</MenuItem>
+              <MenuItem value="BMW">BMW</MenuItem>
+              <MenuItem value="Ferrari">Ferrari</MenuItem>
+              <MenuItem value="Lamborghini">Lamborghini</MenuItem>
+              <MenuItem value="LandRover">LandRover</MenuItem>
+              <MenuItem value="Porsche">Porsche</MenuItem>
+              <MenuItem value="Rolls-Royce">Rolls-Royce</MenuItem>
+              <MenuItem value="Subaru">Subaru</MenuItem>
             </Select>
           </FormControl>
 
@@ -107,6 +122,46 @@ export const MainPage = () => {
             />
           ) : brandValue === "Lexus" ? (
             <LexusModels
+              modelValue={modelValue}
+              filterCarsModel={filterCarsModel}
+            />
+          ) : brandValue === "Mercedes-Benz" ? (
+            <MercModels
+              modelValue={modelValue}
+              filterCarsModel={filterCarsModel}
+            />
+          ) : brandValue === "BMW" ? (
+            <BMWModels
+              modelValue={modelValue}
+              filterCarsModel={filterCarsModel}
+            />
+          ) : brandValue === "Ferrari" ? (
+            <FerrariModels
+              modelValue={modelValue}
+              filterCarsModel={filterCarsModel}
+            />
+          ) : brandValue === "Lamborghini" ? (
+            <LamborghiniModels
+              modelValue={modelValue}
+              filterCarsModel={filterCarsModel}
+            />
+          ) : brandValue === "LandRover" ? (
+            <LandRoverModels
+              modelValue={modelValue}
+              filterCarsModel={filterCarsModel}
+            />
+          ) : brandValue === "Porsche" ? (
+            <PorscheModels
+              modelValue={modelValue}
+              filterCarsModel={filterCarsModel}
+            />
+          ) : brandValue === "Rolls-Royce" ? (
+            <RollsRoyceModels
+              modelValue={modelValue}
+              filterCarsModel={filterCarsModel}
+            />
+          ) : brandValue === "Subaru" ? (
+            <SubaruModels
               modelValue={modelValue}
               filterCarsModel={filterCarsModel}
             />
@@ -139,17 +194,19 @@ export const MainPage = () => {
       <div className="cars">
         {currentPost ? (
           currentPost.map((item) => (
-            <Card key={item.id} sx={{ maxWidth: 345, width: "345px" }}>
-              <CardActionArea>
+            <Link to={`/details/${item.id}`} style={{textDecoration: "none", margin: "0.8em",}}>
+
+            <Card key={item.id} sx={{ maxWidth: 345, width: "345px" }} >
+              <CardActionArea style={{backgroundColor: "lightgray"}}>
                 <CardMedia
-                  // sx={{width:"100px"}}
+                  sx={{width:"23em", height: "20em"}}
                   component="img"
                   height="140"
-                  style={{ objectFit: "contain" }}
+                  style={{ objectFit: "cover", marginTop: "5px" }}
                   image={item.image}
                   alt=""
                 />
-                <CardContent>
+                <CardContent >
                   <Typography gutterBottom variant="h5" component="div">
                     {item.brand}
                   </Typography>
@@ -166,18 +223,17 @@ export const MainPage = () => {
                     {item.price}$
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {item.description}
+                    {item.description.slice(0, 50)}...
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link to={`/details/${item.id}`}>
                   <Button size="small" color="primary">
                     Details
                   </Button>
-                </Link>
               </CardActions>
             </Card>
+                </Link>
           ))
         ) : (
           <h2>Loading...</h2>
