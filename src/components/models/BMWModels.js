@@ -2,6 +2,7 @@ import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
 
 const BMWModels = ({ modelValue, filterCarsModel }) => {
+  console.log(modelValue);
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
