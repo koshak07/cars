@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../FireBase';
-import { userContext } from './UserContext';
-import { useNavigate } from 'react-router';
 
 export const authContext = createContext()
 const INIT_STATE = {
@@ -18,7 +16,6 @@ const reducer = (state= INIT_STATE, action)=>{
     }
 }
 const AuthContextProvider = (props) => {
-    // const {getCars}= useContext(userContext)
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
     const googleProvider = new GoogleAuthProvider()
     const authWithGoogle = async ()=>{
