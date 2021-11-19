@@ -7,14 +7,14 @@ import { adminContext } from "../contexts/AdminContext";
 
 const AddPage = () => {
   const schema = yup.object({
-    image: yup.string().min(1).max(200).required("Обязательно"),
+    image: yup.string().min(1).max(10000).required("Обязательно"),
     brand: yup.string().min(1).max(200).required("Обязательно"),
     model: yup.string().min(1).max(200).required("Обязательно"),
     color: yup.string().min(1).max(200).required("Обязательно"),
     yearOfIssue: yup.number().min(1).required("Обязательно"),
     price: yup.number().min(1).required("Обязательно"),
 
-    description: yup.string().min(1).max(500).required("Обязательно"),
+    description: yup.string().min(1).max(1000).required("Обязательно"),
 
   });
   //стягиваем addcar с юзерконтекста
@@ -27,7 +27,6 @@ const AddPage = () => {
 
   return (
     <div className="add-page">
-      <h1>add Page</h1>
       <Formik
         validationSchema={schema}
         onSubmit={handleSubmit}

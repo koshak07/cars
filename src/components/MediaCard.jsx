@@ -6,12 +6,11 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { Link } from "react-router-dom";
 import { adminContext } from "../contexts/AdminContext";
-import {userContext} from "../contexts/UserContext"
+import { userContext } from "../contexts/UserContext";
 
-export const MediaCard = ({props}) => {
-
+export const MediaCard = ({ props }) => {
   const { getCars, cars, deleteCar } = useContext(adminContext);
-  const {addAndDelInCart} = useContext(userContext)
+  const { addAndDelInCart } = useContext(userContext);
   useEffect(() => {
     getCars();
   }, []);
@@ -19,11 +18,13 @@ export const MediaCard = ({props}) => {
     <>
       {cars ? (
         cars.map((item) => (
-
-          <Card key={item.id} sx={{ maxWidth: 345, width: "345px", marginTop: "50px" }}>
-
-            <CardActionArea>
+          <Card
+            key={item.id}
+            sx={{ maxWidth: 345, width: "345px", marginTop: "50px" }}
+          >
+            <CardActionArea sx={{ backgroundColor: "lightgray" }}>
               <CardMedia
+                sx={{ width: "23em", height: "20em" }}
                 component="img"
                 height="140"
                 style={{ objectFit: "contain" }}
@@ -55,7 +56,7 @@ export const MediaCard = ({props}) => {
                 onClick={() => addAndDelInCart(props.item)}
               ></Button>
             </CardActionArea>
-            <CardActions>
+            <CardActions sx={{ backgroundColor: "lightgray" }}>
               <Link to={`/admin/edit/${item.id}`}>
                 <Button size="small" color="primary">
                   Edit Car

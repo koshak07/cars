@@ -1,16 +1,6 @@
 {
   "cars": [
     {
-      "image": "https://s.auto.drom.ru/photo/JFQuM6TdLkASgPqXKBho5WI0CNIxiBYJJnnKDOpo_LkrdTSrU1l2azCpIS9U__R2sEWrmxGgrTSJKfRb3B-jEoNLjQFy.jpg",
-      "brand": "Lexus",
-      "model": "RC200t",
-      "color": "blue",
-      "yearOfIssue": "2017",
-      "price": "20000",
-      "description": " Машина в идеальном состоянии. Яркая эффектная зажигалка на каждый день. Птс в наличии, вместе поставим на вас на учёт. Вы будете первым собственником в кр!",
-      "id": 6
-    },
-    {
       "image": "https://s.auto.drom.ru/photo/GiwuWZBu0EtMmTEubKscgukfURx3ppmjyssdqPyCrj9fQQoW8oxrEquOSURCn9gShDUOLJm-ITpcL_gxsPwF6XRjpos6.jpg",
       "brand": "Lexus",
       "model": "LX570",
@@ -23,7 +13,7 @@
     {
       "image": "https://s.auto.drom.ru/photo/iLeLtfWQQEOAIchtBO0ofB94f4u2kaW1BYSWyZPEutW0RsXT4VWSsXh6EMU-F-1UdlF6gH90_p6y1Cs6XUtHWpNxrVZW.jpg",
       "brand": "Lexus",
-      "model": " GS250",
+      "model": "GS250",
       "color": "black",
       "yearOfIssue": "2012",
       "price": "16000",
@@ -279,6 +269,16 @@
       "price": "18000",
       "description": "ПРОДАМ  В ОТЛИЧНОМ СОСТОЯНИЙ , ОДИН ХОЗЯИН , С 2015 ГОДА В РФ, АУКЦИОН 4 БАЛЛА, ВЕСЬ В РОДНОЙ КРАСКЕ!!! САЛОН ВЕСЬ ЦЕЛЫЙ , ХОРОШИЕ ЧЕХЛЫ, ВИДЕОРЕГИСТРАТОР.",
       "id": 33
+    },
+    {
+      "image": "https://avatars.mds.yandex.net/get-autoru-vos/1937012/c8ac28a283a2aad4d9389b4e96dd96c3/1200x900n",
+      "brand": "Lexus",
+      "model": "gs300",
+      "color": "black",
+      "yearOfIssue": "2005",
+      "price": "5000",
+      "description": "Машина в отличном состоянии, как внешне так и по технической части, любые проверки, обслуживается только у официального дилера. Пробег реальный - любые проверки Автомобиль не требует вложений Зимой в Москве не эксплуатировалась, поэтому днище в идеальном состоянии, ржавчины и прочего нет.",
+      "id": 34
     }
   ]
 }
