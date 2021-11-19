@@ -3,24 +3,22 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import { userContext } from "../contexts/UserContext";
 
-const DetailsPage = (props) => {
-  const { getDetails, carDetails, addAndDelInCart, checkInCart } = useContext(userContext);
+const DetailsPage = () => {
+  const { getDetails, carDetails, addAndDelInCart, checkInCart } =
+    useContext(userContext);
   const params = useParams();
-  // console.log(params.id);
   useEffect(() => {
     getDetails(params.id);
   }, []);
-  
-  // console.log(props.cars);  
-  // console.log(carDetails);
+
   return (
     <div>
       {carDetails ? (
         <div className="detail-page">
           <div className="detail-image">
-            <img src={carDetails.image} alt="" />
+            <img style={{maxWidth: "60em", maxHeight: "40em"}} src={carDetails.image} alt="" />
           </div>
-          <div className= "detail-info">
+          <div className="detail-info">
             <h2>{carDetails.brand}</h2>
             <h3>{carDetails.model}</h3>
 
@@ -43,7 +41,11 @@ const DetailsPage = (props) => {
             </div>
 
             <Button size="small" onClick={() => addAndDelInCart(carDetails)}>
-              {checkInCart(carDetails.id) ? <h2>Requested</h2>:<h2>Make a request</h2>}
+              {checkInCart(carDetails.id) ? (
+                <h2>Requested</h2>
+              ) : (
+                <h2>Make a request</h2>
+              )}
             </Button>
           </div>
         </div>

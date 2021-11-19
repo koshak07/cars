@@ -14,7 +14,7 @@ import {userContext} from '../contexts/UserContext'
                     pageNumbers.map((page)=>(
                         <li key={page}>
                             <button
-                            style={{background: page===currentPage ? "red" : "lightblue"}}
+                            style={{background: page===currentPage ? "rgb(13,144,111)" : "lightblue"}}
                             onClick={()=>handlePage(page)}
                             >
                                 {page}

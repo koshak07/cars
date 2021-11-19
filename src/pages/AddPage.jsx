@@ -17,7 +17,7 @@ const AddPage = () => {
     description: yup.string().min(1).max(500).required("Обязательно"),
 
   });
-  //стягиваем addcar с аюзерконтекста
+  //стягиваем addcar с юзерконтекста
   const { addCar } = useContext(adminContext);
   const navigate = useNavigate()
   const handleSubmit = (car) => {

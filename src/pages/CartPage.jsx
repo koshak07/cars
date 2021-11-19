@@ -16,7 +16,6 @@ import { userContext } from "../contexts/UserContext";
 
 const CartPage = () => {
   const { cart, getCart, changeCountInCart } = useContext(userContext);
-  console.log(cart);
   useEffect(() => {
     getCart();
   }, []);
@@ -70,7 +69,6 @@ const CartPage = () => {
                       Make a Reguest
                     </Button>
                     </Stack>
-                    {/* <button >Make a Reguest</button> */}
                   </Link>
                 </TableCell>
               </TableRow>

@@ -56,6 +56,16 @@ code {
 .pagination ul {
   display: flex;
   list-style-type: none;
+
+}
+.pagination li{
+  margin: 0 0.1em;
+  
+}
+.pagination button{
+  border: none;
+    border-radius: 5px;
+    padding: 5px;
 }
 .filter {
   display: flex;
@@ -89,3 +99,5 @@ code {
   background: rgb(171, 175, 182);
 
 }
+
+
