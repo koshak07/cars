@@ -9,18 +9,27 @@ const AdminPage = () => {
   let email = localStorage.getItem("email");
   useEffect(() => {
     if (!email || email !== "nochnoibriz@gmail.com") {
-      navigate("/");
+      if (!email || email !== "maksatlevsha@gmail.com"){
+        if (!email || email !== "sjrjika@gmail.com"){
+          navigate("/");
+        }
+      }
     }
   }, []);
 
   return (
-    <div className="cars">
-      <Link to="/admin/add">
-        <Button variant="outlined" color="info">
+    <div className="admin-page">
+      <div>
+
+      <Link to="/admin/add" style={{textDecoration:"none"}}>
+        <Button variant="outlined" color="error" >
           Добавить продукт
         </Button>
       </Link>
+      </div>
+    <div className="cars">
       <MediaCard />
+    </div>
     </div>
   );
 };
