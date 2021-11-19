@@ -19,8 +19,8 @@ const OrderPage = () => {
     const schema = yup.object({
         number: yup
             .number()
-            .min(100, "Минимальное количество символов 16")
-            .max(9999, "Максимальное количество символов 16")
+            .min(1000000000000000, "Минимальное количество символов 16")
+            .max(9999999999999999, "Максимальное количество символов 16")
             .required("Данное поле обязательно для заполнения"),
         month: yup
             .string()
@@ -75,7 +75,7 @@ const OrderPage = () => {
             <ReactCardFlip isFlipped={isFlipped} flipDirection='vertical'>
 
                 <div style={{ margin: '0 auto', width: '50%', }}>
-                    <h2 style={{ width: '50%', textAlign: 'center', color: '#31B8BF', margin: '0 auto' }}>Форма заказа</h2>
+                    <h2 style={{ width: '50%', textAlign: 'center', color: '#000', margin: '0 auto' }}>Форма заказа</h2>
                     <Formik
                         validationSchema={schema2}
                         onSubmit={handleSubmit}
@@ -104,8 +104,8 @@ const OrderPage = () => {
                                         {errors.fullname}
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                <Form.Group className="mb-3" controlId="formBasicEmail22">
-                                    <Form.Label>Дата</Form.Label>
+                                {/* <Form.Group className="mb-3" controlId="formBasicEmail22">
+                                    <Form.Label>Дата оформления</Form.Label>
                                     <Form.Control
                                         type="date"
                                         placeholder="Введите дату"
@@ -118,7 +118,7 @@ const OrderPage = () => {
                                     <Form.Control.Feedback type="invalid">
                                         {errors.data}
                                     </Form.Control.Feedback>
-                                </Form.Group>
+                                </Form.Group> */}
                                 <Form.Group className="mb-3" controlId="formBasicEmail32">
                                     <Form.Label>Комментарий</Form.Label>
                                     <Form.Control
@@ -145,7 +145,7 @@ const OrderPage = () => {
 
 
                 <div style={{ width: '50%', margin: '0 auto' }}>
-                    <h2 style={{ width: '50%', textAlign: 'center', color: '#31B8BF', margin: '0 auto' }}>Форма оплаты</h2>
+                    <h2 style={{ width: '50%', textAlign: 'center', color: '#000', margin: '0 auto' }}>Форма оплаты</h2>
                     <Formik
                         validationSchema={schema}
                         onSubmit={handleSubmit}
