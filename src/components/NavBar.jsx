@@ -236,6 +236,7 @@ export default function NavBar() {
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
               onChange={(e)=>filterCars('q', e.target.value)}
+              
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />

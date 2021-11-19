@@ -18,6 +18,8 @@ code {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background: url(https://clipart-db.ru/file_content/rastr/background_039.jpg);
+
 }
 .add-page form {
   display: flex;
@@ -42,7 +44,7 @@ code {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf1LcjCG70HjIKlviK7KHCCKP2RL5EYF35WeSUcB4Jkx1DQCmy1vF9Ca5lgU34H545jYs&usqp=CAU);
+  background: url(https://clipart-db.ru/file_content/rastr/background_039.jpg);
 }
 .cars link {
   background-color: "green";
@@ -99,5 +101,26 @@ code {
   background: rgb(171, 175, 182);
 
 }
+.order-page{
+  background-image: url(https://phonoteka.org/uploads/posts/2021-04/1618467315_47-p-belii-kirpichnii-fon-47.jpg);
 
+}
 
+.admin-page{
+  background-image: url(https://phonoteka.org/uploads/posts/2021-04/1618467315_47-p-belii-kirpichnii-fon-47.jpg);
+
+}
+
+.edit-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: url(https://clipart-db.ru/file_content/rastr/background_039.jpg);
+
+}
+.edit-page form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}

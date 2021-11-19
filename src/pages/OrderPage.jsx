@@ -71,7 +71,7 @@ const OrderPage = () => {
     }, [])
     
     return (
-        <div className='container'>
+        <div className='container order-page'>
             <ReactCardFlip isFlipped={isFlipped} flipDirection='vertical'>
 
                 <div style={{ margin: '0 auto', width: '50%', }}>

@@ -27,7 +27,6 @@ const AddPage = () => {
 
   return (
     <div className="add-page">
-      <h1>add Page</h1>
       <Formik
         validationSchema={schema}
         onSubmit={handleSubmit}
