@@ -3,7 +3,6 @@ import axios from "axios";
 import React, { createContext, useEffect, useReducer, useState } from "react";
 import { API } from "../helpers/API";
 import { calcSubPrice, calcTotalPrice } from "../helpers/const";
-import "react-credit-cards/es/styles-compiled.css"
 
 
 export const userContext = createContext();
