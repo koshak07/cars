@@ -3,249 +3,197 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import {
-  Button,
-  CardActionArea,
-  CardActions,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-} from "@mui/material";
+import {Button, CardActionArea, CardActions, FormControl, InputLabel, MenuItem,Select,} from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { userContext } from "../contexts/UserContext";
 import Pagination from "../components/Pagination";
-import ToyotaModels from "../components/models/ToyotaModels";
-import LexusModels from "../components/models/LexusModels";
-import MercModels from "../components/models/MercModels";
-import BMWModels from "../components/models/BMWModels";
-import FerrariModels from "../components/models/FerrariModels";
-import LamborghiniModels from "../components/models/LamborghiniModels";
-import LandRoverModels from "../components/models/LandRoverModels";
-import PorscheModels from "../components/models/PorscheModel";
-import RollsRoyceModels from "../components/models/RollsRoyceModels";
-import SubaruModels from "../components/models/SubaruModels";
+import DoubleBasic from "../components/type/DoubleBasic";
+import DoubleDeluxe from "../components/type/DoubleDeluxe";
+import DoubleStandart from "../components/type/DoubleStandart";
+import EthnoBasic from "../components/type/EthnoBasic";
+import EthnoDeluxe from "../components/type/EthnoDeluxe";
+import EthnoStandart from "../components/type/EthnoStandart";
+import FamilyBasic from "../components/type/FamilyBasic";
+import FamilyStandart from "../components/type/FamileStandart";
+import FamilyDeluxe from "../components/type/FamilyDeluxe";
 
 export const MainPage = () => {
   const navigate = useNavigate();
-  const { getCars, cars, currentPost } = useContext(userContext);
-  const [brandValue, setBrandValue] = useState("");
+  const { getRooms, rooms, currentPost } = useContext(userContext);
+  const [roomTypeValue, setRoomTypeValue] = useState("");
 
-  const [modelValue, setModelValue] = useState("");
-  const [colorValue, setColorValue] = useState("");
+  const [roomSizeValue, setRoomSizeValue] = useState("");
   let object = new URLSearchParams(window.location.search);
-  function filterCars(key, value) {
+  function filterRooms(key, value) {
     object.set(key, value);
     let newUrl = `${window.location.pathname}?${object.toString()}`;
     navigate(newUrl);
-    getCars();
-    setBrandValue(value);
+    getRooms();
+    setRoomTypeValue(value);
   }
 
-  function filterCarsModel(key, value) {
+  function filterRoomsRoomSize(key, value) {
     object.set(key, value);
     let newUrl = `${window.location.pathname}?${object.toString()}`;
     navigate(newUrl);
-    getCars();
-    setModelValue(value);
+    getRooms();
+    setRoomSizeValue(value);
   }
-  function filterCarsColor(key, value) {
-    object.set(key, value);
-    let newUrl = `${window.location.pathname}?${object.toString()}`;
-    navigate(newUrl);
-    getCars();
-    setModelValue(value);
-  }
+  
   useEffect(() => {
-    setBrandValue(object.get("brand"));
+    setRoomTypeValue(object.get("roomType"));
   }, [object]);
 
   useEffect(() => {
-    setModelValue(object.get("model"));
-  }, [object]);
-  useEffect(() => {
-    setColorValue(object.get("color"));
+    setRoomSizeValue(object.get("roomSize"));
   }, [object]);
 
   useEffect(() => {
-    getCars();
+    getRooms();
   }, []);
-
   return (
     <>
       <div className="main-page">
+        <div
+          style={{
+            background:
+              "url(https://m02.tury.ru/hotel/89/8938325/9022740_1600.jpg)",
+            height: "500px",
+          }}
+        ></div>
         {/* <FilterOnMainPage/> */}
         <div className="filter">
-          <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">
-              Brand
-            </InputLabel>
+          <FormControl variant="outlined" sx={{ m: 1, minWidth: 120 }}>
+            <InputLabel id="demo-simple-select-outlined-label">Type</InputLabel>
             <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
-              value={brandValue}
+              labelId="demo-simple-select-outlined-label"
+              id="demo-simple-select-outlined"
+              value={roomTypeValue}
               onChange={(e) => {
-                filterCars("brand", e.target.value);
+                filterRooms("roomType", e.target.value);
               }}
-              label="Brand"
+              label="RoomType"
             >
               <MenuItem value="Choice">
-                <em>Выберите бренд</em>
+                <em>Выберите тип комнат</em>
               </MenuItem>
-              <MenuItem value="Toyota">Toyota</MenuItem>
-              <MenuItem value="Lexus">Lexus</MenuItem>
-              <MenuItem value="Mercedes-Benz">Mercedes-Benz</MenuItem>
-              <MenuItem value="BMW">BMW</MenuItem>
-              <MenuItem value="Ferrari">Ferrari</MenuItem>
-              <MenuItem value="Lamborghini">Lamborghini</MenuItem>
-              <MenuItem value="LandRover">LandRover</MenuItem>
-              <MenuItem value="Porsche">Porsche</MenuItem>
-              <MenuItem value="Rolls-Royce">Rolls-Royce</MenuItem>
-              <MenuItem value="Subaru">Subaru</MenuItem>
+              <MenuItem value="Double Basic">Double Basic</MenuItem>
+              <MenuItem value="Double Deluse">Double Deluse</MenuItem>
+              <MenuItem value="Double Standart">Double Standart</MenuItem>
+              <MenuItem value="Ethno Basic">Ethno Basic</MenuItem>
+              <MenuItem value="Ethno Deluxe">Ethno Deluxe</MenuItem>
+              <MenuItem value="Ethno Standart">Ethno Standart</MenuItem>
+              <MenuItem value="Family Basic">Family Basic</MenuItem>
+              <MenuItem value="Family Deluxe">Family Deluxe</MenuItem>
+              <MenuItem value="Family Standart">Family Standart</MenuItem>
             </Select>
           </FormControl>
 
           {/* model */}
-          {brandValue === "Choice" ? (
-            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">Выберите бренд</InputLabel>
-            <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
-              
-            >
-             
-              
-            </Select>
-          </FormControl>
-          ) : brandValue === "Lexus" ? (
-            <LexusModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
+          {roomTypeValue === "Choice" ? (
+            <FormControl variant="outlined" sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel id="demo-simple-select-outlined-label">
+                Выберите кол комнат
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-outlined-label"
+                id="demo-simple-select-outlined"
+              ></Select>
+            </FormControl>
+          ) : roomTypeValue === "Double Basic" ? (
+            <DoubleBasic
+              roomSizeValue={roomSizeValue}
+              filterRoomsRoomSize={filterRoomsRoomSize}
             />
-          ) : brandValue === "Mercedes-Benz" ? (
-            <MercModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
+          ) : roomTypeValue === "Double Deluxe" ? (
+            <DoubleDeluxe
+              roomSizeValue={roomSizeValue}
+              filterRoomsRoomSize={filterRoomsRoomSize}
             />
-          ) : brandValue === "BMW" ? (
-            <BMWModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
+          ) : roomTypeValue === "Double Standart" ? (
+            <DoubleStandart
+              roomSizeValue={roomSizeValue}
+              filterRoomsRoomSize={filterRoomsRoomSize}
             />
-          ) : brandValue === "Ferrari" ? (
-            <FerrariModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
+          ) : roomTypeValue === "Ethno Basic" ? (
+            <EthnoBasic
+              roomSizeValue={roomSizeValue}
+              filterRoomsRoomSize={filterRoomsRoomSize}
             />
-          ) : brandValue === "Lamborghini" ? (
-            <LamborghiniModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
+          ) : roomTypeValue === "Ethno Deluxe" ? (
+            <EthnoDeluxe
+              roomSizeValue={roomSizeValue}
+              filterRoomsRoomSize={filterRoomsRoomSize}
             />
-          ) : brandValue === "LandRover" ? (
-            <LandRoverModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
+          ) : roomTypeValue === "Ethno Standart" ? (
+            <EthnoStandart
+              roomSizeValue={roomSizeValue}
+              filterRoomsRoomSize={filterRoomsRoomSize}
             />
-          ) : brandValue === "Porsche" ? (
-            <PorscheModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
+          ) : roomTypeValue === "Family Basic" ? (
+            <FamilyBasic
+              roomSizeValue={roomSizeValue}
+              filterRoomsRoomSize={filterRoomsRoomSize}
             />
-          ) : brandValue === "Rolls-Royce" ? (
-            <RollsRoyceModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
+          ) : roomTypeValue === "Family Deluxe" ? (
+            <FamilyDeluxe
+              roomSizeValue={roomSizeValue}
+              filterRoomsRoomSize={filterRoomsRoomSize}
             />
-          ) : brandValue === "Subaru" ? (
-            <SubaruModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
-            />
-          ) : brandValue === "Toyota" ? (
-            <ToyotaModels
-              modelValue={modelValue}
-              filterCarsModel={filterCarsModel}
+          ) : roomTypeValue === "Family Standart" ? (
+            <FamilyStandart
+              roomSizeValue={roomSizeValue}
+              filterRoomsRoomSize={filterRoomsRoomSize}
             />
           ) : null}
-          {/* color */}
-          <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-standard-label">
-              Color
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
-              value={colorValue}
-              onChange={(e) => {
-                filterCarsColor("color", e.target.value);
-              }}
-              label="Color"
-            >
-              <MenuItem value="">
-                <em>Выберите цвет</em>
-              </MenuItem>
-              <MenuItem value="black">black</MenuItem>
-              <MenuItem value="white">white</MenuItem>
-              <MenuItem value="blue">blue</MenuItem>
-              <MenuItem value="green">green</MenuItem>
-            </Select>
-          </FormControl>
         </div>
-      </div>
-      <div className="cars">
-        {currentPost ? (
-          currentPost.map((item) => (
-            <Link
-              to={`/details/${item.id}`}
-              style={{ textDecoration: "none", margin: "0.8em" }}
-            >
-              <Card key={item.id} sx={{ maxWidth: 345, width: "345px" }}>
-                <CardActionArea style={{ backgroundColor: "lightgray" }}>
-                  <CardMedia
-                    sx={{ width: "23em", height: "20em" }}
-                    component="img"
-                    height="140"
-                    style={{ objectFit: "cover", marginTop: "5px" }}
-                    image={item.image}
-                    alt=""
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {item.brand}
-                    </Typography>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {item.model}
-                    </Typography>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {item.color}
-                    </Typography>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {item.yearOfIssue}
-                    </Typography>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {item.price}$
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {item.description.slice(0, 50)}...
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    Details
-                  </Button>
-                </CardActions>
-              </Card>
-            </Link>
-          ))
-        ) : (
-          <h2>Loading...</h2>
-        )}
-      </div>
-      <div>
-        <Pagination />
+        <div className="rooms">
+          {currentPost ? (
+            currentPost.map((item) => (
+              <Link
+                to={`/details/${item.id}`}
+                style={{ textDecoration: "none", margin: "0.8em" }}
+              >
+                <Card key={item.id} sx={{ maxWidth: 340, width: "305px" }}>
+                  <CardActionArea style={{ backgroundColor: "azure" }}>
+                    <CardMedia
+                      sx={{ width: "23em", height: "20em" }}
+                      component="img"
+                      height="140"
+                      style={{ objectFit: "cover", marginTop: "0px" }}
+                      image={item.image}
+                      alt=""
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {item.roomType}
+                      </Typography>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {item.roomSize}
+                      </Typography>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {item.roomPrice}$
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {item.description.slice(0, 50)}...
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Информация
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Link>
+            ))
+          ) : (
+            <h2>Loading...</h2>
+          )}
+        </div>
+        <div>
+          <Pagination />
+        </div>
       </div>
     </>
   );

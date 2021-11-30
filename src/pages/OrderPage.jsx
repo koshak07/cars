@@ -49,12 +49,6 @@ const OrderPage = () => {
             .min(6, "Минимальное количество символов 6")
             .max(150, "Максимальное количество символов 150")
             .required("Данное поле обязательно для заполнения"),
-
-        time: yup
-            .string()
-            .min(4, "Минимальное количество символов 6")
-            .max(150, "Максимальное количество символов 150")
-            // .required("Данное поле обязательно для заполнения"),
     })
 
     const { cart, getCart, updateBadgeLenght } = useContext(userContext)
@@ -75,7 +69,7 @@ const OrderPage = () => {
             <ReactCardFlip isFlipped={isFlipped} flipDirection='vertical'>
 
                 <div style={{ margin: '0 auto', width: '50%', }}>
-                    <h2 style={{ width: '50%', textAlign: 'center', color: '#000', margin: '0 auto' }}>Форма заказа</h2>
+                    <h2 style={{ width: '50%', textAlign: 'center', color: '#000', margin: '0 auto' }}>Забронировать номер</h2>
                     <Formik
                         validationSchema={schema2}
                         onSubmit={handleSubmit}
@@ -90,10 +84,10 @@ const OrderPage = () => {
 
                             >
                                 <Form.Group className="mb-3" controlId="formBasicEmail12">
-                                    <Form.Label>Введите имя и фамилию</Form.Label>
+                                    <Form.Label>Введите Ваше имя и фамилию</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        placeholder="Введите имя и фамилию"
+                                        placeholder="Введите Ваше имя и фамилию"
                                         name="fullname"
                                         onChange={handleChange}
                                         isValid={!errors.fullname && touched.fullname}
@@ -104,8 +98,8 @@ const OrderPage = () => {
                                         {errors.fullname}
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                {/* <Form.Group className="mb-3" controlId="formBasicEmail22">
-                                    <Form.Label>Дата оформления</Form.Label>
+                                <Form.Group className="mb-3" controlId="formBasicEmail22">
+                                    <Form.Label>Дата</Form.Label>
                                     <Form.Control
                                         type="date"
                                         placeholder="Введите дату"
@@ -118,12 +112,12 @@ const OrderPage = () => {
                                     <Form.Control.Feedback type="invalid">
                                         {errors.data}
                                     </Form.Control.Feedback>
-                                </Form.Group> */}
+                                </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail32">
-                                    <Form.Label>Комментарий</Form.Label>
+                                    <Form.Label>Ваши контакты</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        placeholder="Комментарий к заказу"
+                                        placeholder="Ваши контакты"
                                         name="time"
                                         onChange={handleChange}
                                         isValid={!errors.time && touched.time}
@@ -191,10 +185,10 @@ const OrderPage = () => {
                                     </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail3">
-                                    <Form.Label>Ваше имя</Form.Label>
+                                    <Form.Label>Ваше Имя</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        placeholder="Введите имя"
+                                        placeholder="Введите Имя"
                                         name="name"
                                         onChange={handleChange}
                                         isValid={!errors.name && touched.name}
@@ -206,7 +200,7 @@ const OrderPage = () => {
                                     </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicPassword4">
-                                    <Form.Label>Ваш CVV код</Form.Label>
+                                    <Form.Label>Введите CVV код</Form.Label>
                                     <Form.Control
                                         type="password"
                                         placeholder="Введите CVV код"
@@ -221,7 +215,7 @@ const OrderPage = () => {
                                     </Form.Control.Feedback>
                                 </Form.Group>
                                 <p >
-                                    Общая сумма покупки: {
+                                    Общая сумма: {
                                         cart ? cart.totalPrice : 0
                                     }
                                 </p>
@@ -239,9 +233,9 @@ const OrderPage = () => {
             </ReactCardFlip >
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Товар успешно оплачен!</Modal.Title>
+                    <Modal.Title>Успешно оплачено!</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Спасибо, что выбрали наш Автосалон!</Modal.Body>
+                <Modal.Body>Благодарим за ваш выбор!</Modal.Body>
                 <Modal.Footer>
                     <Link to='/'><Button variant="primary" onClick={() => {
                         handleClose()

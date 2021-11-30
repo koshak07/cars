@@ -8,12 +8,8 @@ const AdminPage = () => {
   let navigate = useNavigate();
   let email = localStorage.getItem("email");
   useEffect(() => {
-    if (!email || email !== "nochnoibriz@gmail.com") {
-      if (!email || email !== "maksatlevsha@gmail.com"){
-        if (!email || email !== "sjrjika@gmail.com"){
-          navigate("/");
-        }
-      }
+    if (!email || email !== "sjrjika@gmail.com") {
+      navigate("/");
     }
   }, []);
 
@@ -23,11 +19,11 @@ const AdminPage = () => {
 
       <Link to="/admin/add" style={{textDecoration:"none"}}>
         <Button variant="outlined" color="error" >
-          Добавить продукт
+          Добавить комнаты
         </Button>
       </Link>
       </div>
-    <div className="cars">
+    <div className="rooms">
       <MediaCard />
     </div>
     </div>

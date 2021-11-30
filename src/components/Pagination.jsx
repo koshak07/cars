@@ -1,11 +1,12 @@
+import { Button } from '@mui/material';
 import React, { useContext } from 'react';
 import {userContext} from '../contexts/UserContext'
 
  const Pagination = () => {
     const {totalPosts, postPerPage, handlePage, currentPage} = useContext(userContext)
-    const pageNumbers = []
-    for(let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++){
-        pageNumbers.push(i)
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++) {
+      pageNumbers.push(i);
     }
     return (
         <div className="pagination">
@@ -13,12 +14,12 @@ import {userContext} from '../contexts/UserContext'
                 {
                     pageNumbers.map((page)=>(
                         <li key={page}>
-                            <button
-                            style={{background: page===currentPage ? "rgb(13,144,111)" : "lightblue"}}
+                            
+                            <Button
+                            style={{background: page === currentPage ? "#1a50e4f0" : "lightblue"}}
                             onClick={()=>handlePage(page)}
-                            >
-                                {page}
-                            </button>
+                            > {page}
+                            </Button>
                         </li>
                     ))
                 }

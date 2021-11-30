@@ -9,15 +9,15 @@ import { adminContext } from "../contexts/AdminContext";
 import { userContext } from "../contexts/UserContext";
 
 export const MediaCard = ({ props }) => {
-  const { getCars, cars, deleteCar } = useContext(adminContext);
+  const { getRooms, rooms, deleteRoom } = useContext(adminContext);
   const { addAndDelInCart } = useContext(userContext);
   useEffect(() => {
-    getCars();
+    getRooms();
   }, []);
   return (
     <>
-      {cars ? (
-        cars.map((item) => (
+      {rooms ? (
+        rooms.map((item) => (
           <Card
             key={item.id}
             sx={{ maxWidth: 345, width: "345px", marginTop: "50px" }}
@@ -33,19 +33,16 @@ export const MediaCard = ({ props }) => {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {item.brand}
+                  {item.roomType}
+                </Typography>
+                {/* <Typography gutterBottom variant="h5" component="div">
+                  {item.guests}
+                </Typography> */}
+                <Typography gutterBottom variant="h5" component="div">
+                  {item.roomSize}
                 </Typography>
                 <Typography gutterBottom variant="h5" component="div">
-                  {item.model}
-                </Typography>
-                <Typography gutterBottom variant="h5" component="div">
-                  {item.color}
-                </Typography>
-                <Typography gutterBottom variant="h5" component="div">
-                  {item.yearOfIssue}
-                </Typography>
-                <Typography gutterBottom variant="h5" component="div">
-                  {item.price}$
+                  {item.roomPrise}  $
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {item.description}
@@ -59,11 +56,11 @@ export const MediaCard = ({ props }) => {
             <CardActions sx={{ backgroundColor: "lightgray" }}>
               <Link to={`/admin/edit/${item.id}`}>
                 <Button size="small" color="primary">
-                  Edit Car
+                  Edit Room
                 </Button>
               </Link>
               <Button
-                onClick={() => deleteCar(item.id)}
+                onClick={() => deleteRoom(item.id)}
                 size="small"
                 color="error"
               >

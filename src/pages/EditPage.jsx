@@ -7,31 +7,28 @@ import { adminContext } from "../contexts/AdminContext";
 
 const EditPage = () => {
   const schema = yup.object({
-    image: yup.string().min(1).max(200).required("Обязательно"),
-    brand: yup.string().min(1).max(200).required("Обязательно"),
-    model: yup.string().min(1).max(200).required("Обязательно"),
-    color: yup.string().min(1).max(200).required("Обязательно"),
-    yearOfIssue: yup.number().min(1).required("Обязательно"),
-    price: yup.number().min(1).required("Обязательно"),
-
-    description: yup.string().min(1).max(500).required("Обязательно"),
-
+    image: yup.string().min(1).max(10000).required("Обязательно"),
+    roomType: yup.string().min(1).max(200).required("Обязательно"),
+    // guests: yup.number().min(1).required("Обязательно"),
+    roomSize: yup.number().min(1).required("Обязательно"),
+    roomPrice: yup.number().min(1).required("Обязательно"),
+    description: yup.string().min(1).max(1000).required("Обязательно"),
   });
   const params = useParams();
-  const { getCarToEdit, carToEdit, saveEditedCar } = useContext(adminContext);
+  const { getRoomToEdit, roomToEdit, saveEditedRoom } = useContext(adminContext);
   useEffect(() => {
-    getCarToEdit(params.id);
+    getRoomToEdit(params.id);
   }, []);
   const navigate = useNavigate();
 
   return (
     <div className="edit-page">
       <h1>edit Page</h1>
-      {carToEdit ? (
+      {roomToEdit ? (
         <Formik
-          initialValues={carToEdit}
-          onSubmit={(editedCar) => {
-            saveEditedCar(editedCar);
+          initialValues={roomToEdit}
+          onSubmit={(editedRoom) => {
+            saveEditedRoom(editedRoom);
             navigate("/admin");
           }}
         >
@@ -48,53 +45,43 @@ const EditPage = () => {
                 onChange={handleChange}
               />
               <TextField
-                label="brand"
+                label="roomType"
                 variant="filled"
                 type="text"
-                name="brand"
-                value={values.brand}
-                error={!!errors.brand && touched.brand}
-                helperText={touched.brand ? errors.brand : ""}
+                name="roomType"
+                value={values.roomType}
+                error={!!errors.roomType && touched.roomType}
+                helperText={touched.roomType ? errors.roomType : ""}
+                onChange={handleChange}
+              />
+              {/* <TextField
+                label="guests"
+                variant="filled"
+                type="text"
+                name="guests"
+                value={values.guests}
+                error={!!errors.guests && touched.guests}
+                helperText={touched.guests ? errors.guests : ""}
+                onChange={handleChange}
+              /> */}
+              <TextField
+                label="roomSize"
+                variant="filled"
+                type="text"
+                name="roomSize"
+                value={values.roomSize}
+                error={!!errors.roomSize && touched.roomSize}
+                helperText={touched.roomSize ? errors.roomSize : ""}
                 onChange={handleChange}
               />
               <TextField
-                label="model"
+                label="roomPrice"
                 variant="filled"
                 type="text"
-                name="model"
-                value={values.model}
-                error={!!errors.model && touched.model}
-                helperText={touched.model ? errors.model : ""}
-                onChange={handleChange}
-              />
-              <TextField
-                label="color"
-                variant="filled"
-                type="text"
-                name="color"
-                value={values.color}
-                error={!!errors.color && touched.color}
-                helperText={touched.color ? errors.color : ""}
-                onChange={handleChange}
-              />
-              <TextField
-                label="yearOfIssue"
-                variant="filled"
-                type="text"
-                name="yearOfIssue"
-                value={values.yearOfIssue}
-                error={!!errors.yearOfIssue && touched.yearOfIssue}
-                helperText={touched.yearOfIssue ? errors.yearOfIssue : ""}
-                onChange={handleChange}
-              />
-              <TextField
-                label="price"
-                variant="filled"
-                type="text"
-                name="price"
-                value={values.price}
-                error={!!errors.price && touched.price}
-                helperText={touched.price ? errors.price : ""}
+                name="roomPrice"
+                value={values.roomPrice}
+                error={!!errors.roomPrice && touched.roomPrice}
+                helperText={touched.roomPrice ? errors.roomPrice : ""}
                 onChange={handleChange}
               />
               <TextField
@@ -108,7 +95,7 @@ const EditPage = () => {
                 onChange={handleChange}
               />
               <Button variant="contained" color="primary" type="submit">
-                Edit Car
+                Edit Room
               </Button>
             </form>
           )}

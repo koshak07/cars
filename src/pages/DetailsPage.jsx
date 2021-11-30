@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { userContext } from "../contexts/UserContext";
 
 const DetailsPage = () => {
-  const { getDetails, carDetails, addAndDelInCart, checkInCart } =
+  const { getDetails, roomDetails, addAndDelInCart, checkInCart } =
     useContext(userContext);
   const params = useParams();
   useEffect(() => {
@@ -13,38 +13,34 @@ const DetailsPage = () => {
 
   return (
     <div>
-      {carDetails ? (
+      {roomDetails ? (
         <div className="detail-page">
           <div className="detail-image">
-            <img style={{maxWidth: "60em", maxHeight: "40em"}} src={carDetails.image} alt="" />
+            <img style={{maxWidth: "60em", maxHeight: "40em"}} src={roomDetails.image} alt="" />
           </div>
           <div className="detail-info">
-            <h2>{carDetails.brand}</h2>
-            <h3>{carDetails.model}</h3>
+            <h2>{roomDetails.roomType}</h2>
+            <h3>{roomDetails.guests}</h3>
 
             <div>
               <ul>
                 <li>
-                  <strong>color:</strong>
-                  <span>{carDetails.color}</span>
+                  <strong>Room size:</strong>
+                  <span>{roomDetails.roomSize}</span>
                 </li>
                 <li>
-                  <strong>Year of issue:</strong>
-                  <span>{carDetails.yearOfIssue}</span>
-                </li>
-                <li>
-                  <strong>Price:</strong>
-                  <span>{carDetails.price}$</span>
+                  <strong>Room price:</strong>
+                  <span>{roomDetails.roomPrice}</span>
                 </li>
               </ul>
-              <p>{carDetails.description}</p>
+              <p>{roomDetails.description}</p>
             </div>
 
-            <Button size="small" onClick={() => addAndDelInCart(carDetails)}>
-              {checkInCart(carDetails.id) ? (
-                <h2>Requested</h2>
+            <Button size="small" onClick={() => addAndDelInCart(roomDetails)}>
+              {checkInCart(roomDetails.id) ? (
+                <h2>Запросить</h2>
               ) : (
-                <h2>Make a request</h2>
+                <h2>Сделать запрос</h2>
               )}
             </Button>
           </div>

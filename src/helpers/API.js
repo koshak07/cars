@@ -1,1 +1,1 @@
-export const API = 'http://localhost:8000/cars'
+export const API = "http://localhost:8000/rooms";

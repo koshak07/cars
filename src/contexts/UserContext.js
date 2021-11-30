@@ -7,10 +7,10 @@ import { calcSubPrice, calcTotalPrice } from "../helpers/const";
 
 export const userContext = createContext();
 const INIT_STATE = {
-  cars: null,
-  carDetails: null,
-  carsCountInCart: localStorage.getItem("cart")
-    ? JSON.parse(localStorage.getItem("cart")).cars.length
+  rooms: null,
+  roomDetails: null,
+  roomsCountInCart: localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart")).rooms.length
     : 0,
     cart: null,
   
@@ -18,12 +18,12 @@ const INIT_STATE = {
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
-    case "GET_CARS":
-      return { ...state, cars: action.payload };
+    case "GET_ROOMS":
+      return { ...state, rooms: action.payload };
     case "GET_DETAILS":
-      return { ...state, carDetails: action.payload };
+      return { ...state, roomDetails: action.payload };
     case "ADD_AND_DEL_IN_CART":
-      return { ...state, carsCountInCart: action.payload };
+      return { ...state, roomsCountInCart: action.payload };
     case "GET_CART":
         return {...state, cart: action.payload}  ;
     default:
@@ -33,12 +33,12 @@ const reducer = (state = INIT_STATE, action) => {
 
 const UserContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-  const getCars = async () => {
+  const getRooms = async () => {
     try {
       let filter = window.location.search;
       const response = await axios(`${API}${filter}`);
       let action = {
-        type: "GET_CARS",
+        type: "GET_ROOMS",
         payload: response.data,
       };
       dispatch(action);
@@ -66,43 +66,43 @@ const UserContextProvider = (props) => {
 
   //cart and sum price
   
-  const addAndDelInCart = (car) => {
+  const addAndDelInCart = (room) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
       console.log(cart);
 
     if (!cart) {
       cart = {
-        cars: [],
+        rooms: [],
         totalPrice: 0,
       };
     }
     let product = {
-      car: car,
+      room: room,
       count: 1,
       subPrice: 0,
     };
     product.subPrice = calcSubPrice(product);
-    let checkArr = cart.cars.filter((i) => {
-      return i.car.id === car.id;
+    let checkArr = cart.rooms.filter((i) => {
+      return i.room.id === room.id;
     });
     if (checkArr.length === 0) {
-      cart.cars.push(product);
+      cart.rooms.push(product);
     } else {
-      cart.cars = cart.cars.filter((i) => {
-        return i.car.id !== car.id;
+      cart.rooms = cart.rooms.filter((i) => {
+        return i.room.id !== room.id;
       });
     }
     cart.totalPrice = calcTotalPrice(cart);
     localStorage.setItem("cart", JSON.stringify(cart));
     let action = {
       type: "ADD_AND_DEL_IN_CART",
-      payload: cart.cars.length,
+      payload: cart.rooms.length,
     };
     dispatch(action);
   };
   const updateBadgeLenght = () => {
     let cart = localStorage.getItem('cart')
-    let count = cart ? JSON.parse(cart).cars.lenght : 0;
+    let count = cart ? JSON.parse(cart).rooms.lenght : 0;
     dispatch({
       type: "ADD_AND_DEL_IN_CART",
       payload: count
@@ -114,12 +114,12 @@ const UserContextProvider = (props) => {
       let cart = JSON.parse(localStorage.getItem("cart"));
       if(!cart){
           cart ={
-              cars: [],
+              rooms: [],
               totalPrice: 0,
           }
       }
-      let checkArr = cart.cars.filter((i)=>{
-          return i.car.id === id
+      let checkArr = cart.rooms.filter((i)=>{
+          return i.room.id === id
       })
       if(checkArr.length === 0){
           return false
@@ -133,7 +133,7 @@ const UserContextProvider = (props) => {
       
       if(!cart){
         cart ={
-          cars: [],
+          rooms: [],
           totalPrice: 0,
         }
       }
@@ -150,8 +150,8 @@ const UserContextProvider = (props) => {
          return 
       }
       let cart = JSON.parse(localStorage.getItem('cart'))
-      cart.cars = cart.cars.map(i=>{
-          if(i.car.id === id){
+      cart.rooms = cart.rooms.map(i=>{
+          if(i.room.id === id){
               i.count = count;
               i.subPrice = calcSubPrice(i)
           }
@@ -166,19 +166,19 @@ const UserContextProvider = (props) => {
   //pagination
   const [post, setPost] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage] = useState(8)
+  const [postPerPage] = useState(4)
   useEffect(()=>{
-    if(state.cars){
-      const data = state.cars
+    if(state.rooms){
+      const data = state.rooms
       setPost(data)
     }
 
-  }, [state.cars])
+  }, [state.rooms])
   const numberOfLastPost = currentPage * postPerPage
   const numberOfFirstPost = numberOfLastPost - postPerPage
   const currentPost = post.slice(numberOfFirstPost, numberOfLastPost)
   const totalPosts = post.length
-
+  // console.log(totalPosts, postPerPage)
   const handlePage = (newPage)=>{
     setCurrentPage(newPage)
   }
@@ -190,7 +190,7 @@ const UserContextProvider = (props) => {
 
     <userContext.Provider
       value={{
-        getCars,
+        getRooms,
         getDetails,
         addAndDelInCart,
         checkInCart,
@@ -198,9 +198,9 @@ const UserContextProvider = (props) => {
         changeCountInCart,
         handlePage,
         updateBadgeLenght,
-        cars: state.cars,
-        carDetails: state.carDetails,
-        carsCountInCart: state.carsCountInCart,
+        rooms: state.rooms,
+        roomDetails: state.roomDetails,
+        roomsCountInCart: state.roomsCountInCart,
         cart: state.cart,
         totalPosts,
         currentPost,

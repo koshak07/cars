@@ -5,18 +5,18 @@ import { API } from "../helpers/API";
 export const adminContext = React.createContext();
 
 const INIT_STATE = {
-  cars: null,
-  carToEdit: null,
+  rooms: null,
+  roomToEdit: null,
 };
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
-    case "GET_CARS":
-      return { ...state, cars: action.payload };
-    case "GET_CAR_TO_EDIT":
-      return { ...state, carToEdit: action.payload };
+    case "GET_ROOMS":
+      return { ...state, rooms: action.payload };
+    case "GET_ROOM_TO_EDIT":
+      return { ...state, roomToEdit: action.payload };
     case "CLEAR_STATE":
-      return { ...state, carToEdit: action.payload };
+      return { ...state, roomToEdit: action.payload };
     default:
       return state;
   }
@@ -25,20 +25,20 @@ const reducer = (state = INIT_STATE, action) => {
 const AdminContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   //greate product
-  const addCar = async (car) => {
+  const addRoom = async (room) => {
     try {
-      const response = await axios.post(API, car);
-      getCars();
+      const response = await axios.post(API, room);
+      getRooms();
     } catch (e) {
       console.log(e);
     }
   };
-  //get product
-  const getCars = async () => {
+  //get room
+  const getRooms = async () => {
     try {
       const response = await axios(API);
       let action = {
-        type: "GET_CARS",
+        type: "GET_ROOMS",
         payload: response.data,
       };
       dispatch(action);
@@ -47,11 +47,11 @@ const AdminContextProvider = (props) => {
     }
   };
   //update
-  const getCarToEdit = async (id) => {
+  const getRoomToEdit = async (id) => {
     try {
       const response = await axios(`${API}/${id}`);
       let action = {
-        type: "GET_CAR_TO_EDIT",
+        type: "GET_ROOM_TO_EDIT",
         payload: response.data,
       };
       dispatch(action);
@@ -62,10 +62,10 @@ const AdminContextProvider = (props) => {
 
   //save updated data on id
 
-  const saveEditedCar = async (editedCar) => {
+  const saveEditedRoom = async (editedRoom) => {
     try {
-      const response = await axios.patch(`${API}/${editedCar.id}`, editedCar);
-      getCars();
+      const response = await axios.patch(`${API}/${editedRoom.id}`, editedRoom);
+      getRooms();
     } catch (e) {
       console.log(e);
     }
@@ -81,10 +81,10 @@ const AdminContextProvider = (props) => {
 
   //delete
 
-  const deleteCar = async (id) => {
+  const deleteRoom = async (id) => {
     try {
       const response = await axios.delete(`${API}/${id}`);
-      getCars();
+      getRooms();
     } catch (e) {
       console.log(e);
     }
@@ -93,14 +93,14 @@ const AdminContextProvider = (props) => {
   return (
     <adminContext.Provider
       value={{
-        addCar: addCar,
-        getCars,
+        addRoom,
+        getRooms,
         clearState,
-        saveEditedCar,
-        getCarToEdit,
-        deleteCar,
-        cars: state.cars,
-        carToEdit: state.carToEdit,
+        saveEditedRoom,
+        getRoomToEdit,
+        deleteRoom,
+        rooms: state.rooms,
+        roomToEdit: state.roomToEdit,
       }}
     >
       {props.children}

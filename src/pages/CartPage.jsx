@@ -22,7 +22,7 @@ const CartPage = () => {
   return (
     <div className="cart">
       {cart ? (
-        cart.cars.length > 0 ? (
+        cart.rooms.length > 0 ? (
           <TableContainer
             component={Paper}
             style={{ backgroundColor: "lightgray" }}
@@ -31,25 +31,25 @@ const CartPage = () => {
               <TableHead>
                 <TableRow>
                   <TableCell>Image</TableCell>
-                  <TableCell align="right">Brand</TableCell>
-                  <TableCell align="right">Model</TableCell>
-                  <TableCell align="right">Color</TableCell>
-                  <TableCell align="right">Price</TableCell>
+                  <TableCell align="right">Room Type</TableCell>
+                  <TableCell align="right">Guests</TableCell>
+                  <TableCell align="right">Room Size</TableCell>
+                  <TableCell align="right">Room Price</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {cart.cars.map((i) => (
+                {cart.rooms.map((i) => (
                   <TableRow
                     key={i.id}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <TableCell component="th" scope="row">
-                      <img width="120px" src={i.car.image} alt="" />
+                      <img width="120px" src={i.room.image} alt="" />
                     </TableCell>
-                    <TableCell align="right">{i.car.brand}</TableCell>
-                    <TableCell align="right">{i.car.model}</TableCell>
-                    <TableCell align="right">{i.car.color}</TableCell>
-                    <TableCell align="right">{i.car.price}$</TableCell>
+                    <TableCell align="right">{i.room.roomType}</TableCell>
+                    <TableCell align="right">{i.room.guests}</TableCell>
+                    <TableCell align="right">{i.room.roomSize}</TableCell>
+                    <TableCell align="right">{i.room.roomPrice} $</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -58,7 +58,7 @@ const CartPage = () => {
                   Total :
                 </TableCell>
                 <TableCell colSpan={1} align="right">
-                  {cart.totalPrice}$
+                  {cart.totalPrice} $
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -75,7 +75,7 @@ const CartPage = () => {
             </Table>
           </TableContainer>
         ) : (
-          <h2>Cart is empty</h2>
+          <h2>Корзина пуста</h2>
         )
       ) : (
         <h2>Loading...</h2>

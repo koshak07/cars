@@ -8,20 +8,17 @@ import { adminContext } from "../contexts/AdminContext";
 const AddPage = () => {
   const schema = yup.object({
     image: yup.string().min(1).max(10000).required("Обязательно"),
-    brand: yup.string().min(1).max(200).required("Обязательно"),
-    model: yup.string().min(1).max(200).required("Обязательно"),
-    color: yup.string().min(1).max(200).required("Обязательно"),
-    yearOfIssue: yup.number().min(1).required("Обязательно"),
-    price: yup.number().min(1).required("Обязательно"),
-
+    roomType: yup.string().min(1).max(200).required("Обязательно"),
+    // guests: yup.number().min(1).required("Обязательно"),
+    roomSize: yup.string().min(1).required("Обязательно"),
+    roomPrice: yup.number().min(1).required("Обязательно"),
     description: yup.string().min(1).max(1000).required("Обязательно"),
-
   });
-  //стягиваем addcar с юзерконтекста
-  const { addCar } = useContext(adminContext);
+  //стягиваем addroom с юзерконтекста
+  const { addRoom } = useContext(adminContext);
   const navigate = useNavigate()
-  const handleSubmit = (car) => {
-    addCar(car);
+  const handleSubmit = (room) => {
+    addRoom(room);
     navigate('/admin')
   };
 
@@ -32,11 +29,10 @@ const AddPage = () => {
         onSubmit={handleSubmit}
         initialValues={{
           image: "",
-          brand: "",
-          model: "",
-          color: "",
-          yearOfIssue: 0,
-          price: 0,
+          roomType: "",
+          // guests: 0,
+          roomSize: "",
+          roomPrice: 0,
           description: "",
         }}
       >
@@ -53,53 +49,43 @@ const AddPage = () => {
               onChange={handleChange}
             />
              <TextField
-              label="brand"
+              label="roomType"
               variant="filled"
               type="text"
-              name="brand"
-              value={values.brand}
-              error={!!errors.brand && touched.brand}
-              helperText={touched.brand ? errors.brand : ""}
+              name="roomType"
+              value={values.roomType}
+              error={!!errors.roomType && touched.roomType}
+              helperText={touched.roomType ? errors.roomType : ""}
+              onChange={handleChange}
+            />
+             {/* <TextField
+              label="guests"
+              variant="filled"
+              type="text"
+              name="guests"
+              value={values.guests}
+              error={!!errors.guests && touched.guests}
+              helperText={touched.guests ? errors.guests : ""}
+              onChange={handleChange}
+            /> */}
+             <TextField
+              label="roomSize"
+              variant="filled"
+              type="text"
+              name="roomSize"
+              value={values.roomSize}
+              error={!!errors.roomSize && touched.roomSize}
+              helperText={touched.roomSize ? errors.roomSize : ""}
               onChange={handleChange}
             />
              <TextField
-              label="model"
+              label="roomPrice"
               variant="filled"
               type="text"
-              name="model"
-              value={values.model}
-              error={!!errors.model && touched.model}
-              helperText={touched.model ? errors.model : ""}
-              onChange={handleChange}
-            />
-             <TextField
-              label="color"
-              variant="filled"
-              type="text"
-              name="color"
-              value={values.color}
-              error={!!errors.color && touched.color}
-              helperText={touched.color ? errors.color : ""}
-              onChange={handleChange}
-            />
-             <TextField
-              label="yearOfIssue"
-              variant="filled"
-              type="text"
-              name="yearOfIssue"
-              value={values.yearOfIssue}
-              error={!!errors.yearOfIssue && touched.yearOfIssue}
-              helperText={touched.yearOfIssue ? errors.yearOfIssue : ""}
-              onChange={handleChange}
-            />
-             <TextField
-              label="price"
-              variant="filled"
-              type="text"
-              name="price"
-              value={values.price}
-              error={!!errors.price && touched.price}
-              helperText={touched.price ? errors.price : ""}
+              name="roomPrice"
+              value={values.roomPrice}
+              error={!!errors.roomPrice && touched.roomPrice}
+              helperText={touched.roomPrice ? errors.roomPrice : ""}
               onChange={handleChange}
             />
              <TextField
@@ -115,7 +101,7 @@ const AddPage = () => {
             <Button
             variant="contained" color="primary" type="submit"
             >
-                Add Car
+                Add Room
             </Button>
           </form>
         )}

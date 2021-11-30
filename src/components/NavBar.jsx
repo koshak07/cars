@@ -10,7 +10,8 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
+import ScreenSearchDesktopOutlinedIcon from "@mui/icons-material/ScreenSearchDesktopOutlined";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -21,7 +22,11 @@ import { Link } from "react-router-dom";
 import { Logout, ShoppingCart } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import { authContext } from "../contexts/AuthContext";
-import ShopTwoIcon from '@mui/icons-material/ShopTwo';
+import SignUpModal from "./auth/SignUpModal";
+import SignInModal from "./auth/SignInModal";
+// import ShopTwoIcon from '@mui/icons-material/ShopTwo';
+import BookmarksIcon from "@mui/icons-material/Bookmarks";
+import Logo from "../image/Logo.png";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -45,7 +50,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   position: "absolute",
   pointerEvents: "none",
   display: "flex",
-  alignItems: "center",
+  alignItems: "center"  ,
   justifyContent: "center",
 }));
 
@@ -66,20 +71,28 @@ export default function NavBar() {
   let uuId = localStorage.getItem("uuId");
   const navigate = useNavigate();
   
-  const { getCars, carsCountInCart } = React.useContext(userContext);
-  const { authWithGoogle, user, logOut } = React.useContext(authContext);
+  const { getRooms, roomsCountInCart } = React.useContext(userContext);
+  const { user, logOut, adminEmail } = React.useContext(authContext);
   let obj = new URLSearchParams(window.location.search)
-  function filterCars (key, value){
+  function filterRooms (key, value){
     obj.set(key, value)
     let newUrl = `${window.location.pathname}?${obj.toString()}`
     navigate(newUrl)
-    getCars()
+    getRooms()
   }
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const [show, setShow] = React.useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [showLogin, setShowLogin] = React.useState(false);
+  const handleCloseLogin = () => setShowLogin(false);
+  const handleShowLogin = () => setShowLogin(true);
+
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -115,8 +128,8 @@ export default function NavBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Профиль</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Мой аккаунт</MenuItem>
     </Menu>
   );
 
@@ -138,17 +151,16 @@ export default function NavBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
+      
+      
         <IconButton size="large" aria-label="countCart" color="inherit">
-          <Badge badgeContent={carsCountInCart} color="error">
-            <ShopTwoIcon />
+          <Badge badgeContent={roomsCountInCart} color="error">
+            <BookmarksIcon />
+            
           </Badge>
         </IconButton>
-        
       </MenuItem>
-      <MenuItem>
-       
-        
-      </MenuItem>
+      <MenuItem></MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -161,49 +173,56 @@ export default function NavBar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
+      
     </Menu>
+    
   );
-  let logout;
+  let profile;
   if (user) {
-    if (!uuId) {
-      localStorage.setItem("email", user.email);
-    }
-
-    logout = (
-      <>
-        <Typography
-          variant="h6"
-          component="div"
-          style={{ display: "flex", alignItems: "center" }}
-        >
-          {user.displayName}
-        </Typography>
-        <Link to="/">
-          <IconButton
-            size="large"
-            edge="end"
-            aria-label="account of current user"
-            aria-controls={menuId}
-            aria-haspopup="true"
-            onClick={logOut}
-            color="inherit"
-          >
-            <Logout />
-          </IconButton>
-        </Link>
-      </>
+    profile = (
+      <Button onClick={() => logOut()}>LOGOUT</Button>
     );
   } else {
-    logout = (
-      <Button onClick={authWithGoogle} color="inherit" variant="text">
-        Log in
-      </Button>
+    profile = (
+      <>
+        <Button
+          color="inherit"
+          onClick={handleShowLogin}
+          style={{
+            fontFamily: "Francois One, sans-serif",
+            letterSpacing: "1px",
+            fontSize: "16px",
+          }}
+        >
+          Sign In
+        </Button>
+        <Button
+          color="inherit"
+          onClick={handleShow}
+          style={{
+            fontFamily: "Francois One, sans-serif",
+            letterSpacing: "1px",
+            fontSize: "16px",
+          }}
+        >
+          Sign Up
+        </Button>
+      </>
+    );
+  }
+
+  let temp;
+  if (user.email === adminEmail) {
+    temp = (
+      <Link to="/admin">
+        <Button variant="contained">Admin</Button>
+      </Link>
     );
   }
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar  position="static" color='transparent'>
+    <Box className="navbar" sx={{ flexGrow: 1 }}>
+      <AppBar position="static" color="transparent">
         <Toolbar>
           <IconButton
             size="large"
@@ -214,47 +233,45 @@ export default function NavBar() {
           >
             <MenuIcon />
           </IconButton>
+
           <Typography
-            style={{ cursor: "pointer" }}
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
             onClick={() => {
               navigate("/");
-              getCars();
+              getRooms();
             }}
           >
-            Cars
+            <img
+              className="logo"
+              style={{ width: "190px" }}
+              src={Logo}
+              alt=""
+            />
           </Typography>
 
           <Search>
             <SearchIconWrapper>
-              <SearchIcon />
+              <ScreenSearchDesktopOutlinedIcon />
             </SearchIconWrapper>
+
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
-              onChange={(e)=>filterCars('q', e.target.value)}
-              
+              onChange={(e) => filterRooms("q", e.target.value)}
             />
           </Search>
+          {temp}
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Link to="/cart">
-              <IconButton
-                size="large"
-                aria-label="countCart"
-                color="inherit"
-              >
-                <Badge badgeContent={carsCountInCart} color="error">
-                  <ShopTwoIcon style={{ color: 'black'}} />
+              <IconButton size="large" aria-label="countCart" color="inherit">
+                <Badge badgeContent={roomsCountInCart} color="error">
+                  <BookmarksIcon style={{ color: "#0a2ea3" }} />
                 </Badge>
               </IconButton>
             </Link>
-            
-            {logout}
+            {profile}
           </Box>
+
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -271,6 +288,8 @@ export default function NavBar() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+      <SignUpModal handleClose={handleClose} show={show} />
+      <SignInModal handleCloseLogin={handleCloseLogin} showLogin={showLogin} />
     </Box>
   );
 }
