@@ -11,28 +11,30 @@ import DetailsPage from "./pages/DetailsPage";
 import CartPage from "./pages/CartPage";
 import AuthContextProvider from "./contexts/AuthContext";
 import OrderPage from "./pages/OrderPage";
+import CommentContextProvider from "./contexts/CommentContext";
 
 const MyRoutes = () => {
   return (
-    <AuthContextProvider>
-
-    <UserContextProvider>
-      <AdminContextProvider>
-        <BrowserRouter>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/admin" element={<AdminPage />} />
-            <Route path="/admin/add" element={<AddPage />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/admin/edit/:id" element={<EditPage />} />
-            <Route path="/details/:id" element={<DetailsPage />} />
-            <Route path="/cart/order" element={<OrderPage/>}/>
-          </Routes>
-        </BrowserRouter>
-      </AdminContextProvider>
-    </UserContextProvider>
-    </AuthContextProvider>
+    <CommentContextProvider>
+      <AuthContextProvider>
+        <UserContextProvider>
+          <AdminContextProvider>
+            <BrowserRouter>
+              <NavBar />
+              <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/admin" element={<AdminPage />} />
+                <Route path="/admin/add" element={<AddPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/admin/edit/:id" element={<EditPage />} />
+                <Route path="/details/:id" element={<DetailsPage />} />
+                <Route path="/cart/order" element={<OrderPage />} />
+              </Routes>
+            </BrowserRouter>
+          </AdminContextProvider>
+        </UserContextProvider>
+      </AuthContextProvider>
+    </CommentContextProvider>
   );
 };
 

@@ -27,7 +27,7 @@ code {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* background: url(https://img2.goodfon.ru/wallpaper/nbig/1/30/kosmonavt-luna-moon.jpg); */
+  
 
 }
 
@@ -48,8 +48,6 @@ code {
 
 /* Main page */
 .main-page {
-  /* display: flex; */
-  /* justify-content: flex-start; */
   background: #00305C;
 
 
@@ -59,7 +57,6 @@ code {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  /* background: url(https://clipart-db.ru/file_content/rastr/background_039.jpg); */
 }
 
 .rooms link {
@@ -95,10 +92,6 @@ code {
   background-color: rgb(18, 52, 146);
 }
 
-/* .css-v526sl-MuiPaper-root-MuiAppBar-root {
-  background-image: url(http://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/NAVY2--tojpeg_1496392077033_x1.jpg);
-
-} */
 
 /* Detail Page */
 
@@ -126,18 +119,12 @@ code {
 }
 
 
-/* .admin-page {
-  background-image: url(https://phonoteka.org/uploads/posts/2021-04/1618467315_47-p-belii-kirpichnii-fon-47.jpg);
-
-} */
 
 .edit-page {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* background: url(https://clipart-db.ru/file_content/rastr/background_039.jpg); */
-
 }
 
 .edit-page form {
@@ -146,6 +133,3 @@ code {
   width: 400px;
 }
 
-.navbar{
-  /* position: fixed; */
-}

@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router";
+import Comments from "../components/Comments";
 import { userContext } from "../contexts/UserContext";
 
 const DetailsPage = () => {
@@ -44,6 +45,7 @@ const DetailsPage = () => {
               )}
             </Button>
           </div>
+          <Comments commentId={roomDetails.id} />
         </div>
       ) : (
         <h2>Loading...</h2>

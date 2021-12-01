@@ -39,7 +39,7 @@ export const SignInModal = (props) => {
         <Modal.Body>
           <Form onSubmit={handleLogIn}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Логин</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 onChange={handleChange}
                 name="email"
@@ -47,7 +47,7 @@ export const SignInModal = (props) => {
                 placeholder="Введите логин"
               />
               <Form.Text className="text-muted">
-                Мы никогда никому не передадим ваше имя пользователя.
+                Мы никогда никому не передадим Ваше имя пользователя.
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">

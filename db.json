@@ -1,7 +1,7 @@
 {
   "rooms": [
     {
-      "image": "https://lh3.googleusercontent.com/proxy/YU8xMB05R8OMI2C_YdxU6_voP6dJX59Xyoe29KQqfv5Ll7JzV_DaL_NDqebrBv-TjQSjorRAnknPMwHkx_GxHwefK9Zz",
+      "image": "http://cdn.cnn.com/cnnnext/dam/assets/140127103345-peninsula-shanghai-deluxe-mock-up.jpg",
       "roomType": "Double Deluxe",
       "guests": "2",
       "roomSize": "Three",
@@ -9,15 +9,6 @@
       "description": "Average size 40 sqm / 441 sqf Large “queen-size” bed or 2 twin beds Possibility of accommodating three people with an extra bed (free for children under 12) View of the street – possibility of a balcony Air conditioning – Sound-proofing Bathroom with separate shower unit (Molton Brown welcome products) Minibar Free Wi-Fi internet connection Direct telephone line with messaging service Flat-screen television, radio, video-on-demand Safe deposit box Heated trouser press",
       "id": 1,
       "roomPrice": "320"
-    },
-    {
-      "image": "https://i.pinimg.com/564x/65/e4/bc/65e4bc3e9e947fa9302650f67f6e3c97.jpg",
-      "roomType": "Double Deluxe",
-      "guests": "3",
-      "roomSize": "Three",
-      "roomPrice": "320",
-      "description": "Total surface area 104 sqm / 1098 sqf 2 large bedrooms with bathrooms (with separate shower) Large independent sitting room between the two bedrooms with armchairs and sofa bed Upper floors, view over the street only Balcony Air-conditioning – Sound-proofing Molton Brown welcome products in the bathroom Minibar Free Wi-Fi internet connection Direct telephone line with messaging service Flat-screen television, radio, video-on-demand Safe deposit box Heated trouser press",
-      "id": 2
     },
     {
       "image": "https://www.bnbzoh.nl/wp-content/uploads/2015/08/MG_5651-copyAnd7more_fused-copy.jpg",
@@ -131,6 +122,21 @@
       "roomPrice": "210",
       "description": "Average size 40 sqm / 441 sqf Large “queen-size” bed or 2 twin beds Possibility of accommodating three people with an extra bed (free for children under 12) View of the street – possibility of a balcony Air conditioning – Sound-proofing Bathroom with separate shower unit (Molton Brown welcome products) Minibar Free Wi-Fi internet connection Direct telephone line with messaging service Flat-screen television, radio, video-on-demand Safe deposit box Heated trouser press",
       "id": 16
+    },
+    {
+      "image": "https://i.pinimg.com/564x/65/e4/bc/65e4bc3e9e947fa9302650f67f6e3c97.jpg",
+      "roomType": "Double Deluxe",
+      "roomSize": "Three",
+      "roomPrice": "230",
+      "description": "Average size 40 sqm / 441 sqf Large “queen-size” bed or 2 twin beds Possibility of accommodating three people with an extra bed (free for children under 12) View of the street – possibility of a balcony Air conditioning – Sound-proofing Bathroom with separate shower unit (Molton Brown welcome products) Minibar Free Wi-Fi internet connection Direct telephone line with messaging service Flat-screen television, radio, video-on-demand Safe deposit box Heated trouser press",
+      "id": 17
+    }
+  ],
+  "comments": [
+    {
+      "comment": "klass",
+      "userEmail": "3441156133@qq.com",
+      "id": 2
     }
   ]
 }

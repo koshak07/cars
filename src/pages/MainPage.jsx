@@ -57,11 +57,13 @@ export const MainPage = () => {
         <div
           style={{
             background:
-              "url(https://m02.tury.ru/hotel/89/8938325/9022740_1600.jpg)",
+              "url(https://1.bp.blogspot.com/-3YYwzCWMImE/XXdMrPe83lI/AAAAAAAAFnY/0qkbKN8SERkHpEdE6wTxn7vS2BWYydi3ACLcBGAs/s1600/EDY_B0nUEAEidHU.jpg)",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "bottom",
             height: "500px",
           }}
         ></div>
-        {/* <FilterOnMainPage/> */}
         <div className="filter">
           <FormControl variant="outlined" sx={{ m: 1, minWidth: 120 }}>
             <InputLabel id="demo-simple-select-outlined-label">Type</InputLabel>

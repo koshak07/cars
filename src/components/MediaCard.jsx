@@ -35,9 +35,7 @@ export const MediaCard = ({ props }) => {
                 <Typography gutterBottom variant="h5" component="div">
                   {item.roomType}
                 </Typography>
-                {/* <Typography gutterBottom variant="h5" component="div">
-                  {item.guests}
-                </Typography> */}
+                
                 <Typography gutterBottom variant="h5" component="div">
                   {item.roomSize}
                 </Typography>

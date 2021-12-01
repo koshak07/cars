@@ -9,7 +9,6 @@ const AddPage = () => {
   const schema = yup.object({
     image: yup.string().min(1).max(10000).required("Обязательно"),
     roomType: yup.string().min(1).max(200).required("Обязательно"),
-    // guests: yup.number().min(1).required("Обязательно"),
     roomSize: yup.string().min(1).required("Обязательно"),
     roomPrice: yup.number().min(1).required("Обязательно"),
     description: yup.string().min(1).max(1000).required("Обязательно"),
@@ -58,16 +57,6 @@ const AddPage = () => {
               helperText={touched.roomType ? errors.roomType : ""}
               onChange={handleChange}
             />
-             {/* <TextField
-              label="guests"
-              variant="filled"
-              type="text"
-              name="guests"
-              value={values.guests}
-              error={!!errors.guests && touched.guests}
-              helperText={touched.guests ? errors.guests : ""}
-              onChange={handleChange}
-            /> */}
              <TextField
               label="roomSize"
               variant="filled"
